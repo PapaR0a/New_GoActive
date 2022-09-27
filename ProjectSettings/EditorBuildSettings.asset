@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/3.Scenes/BWLoadFirst.unity
+    guid: 3f3c69be588828d44a9efa306e752bc6
+  - enabled: 1
+    path: Assets/3.Scenes/GAGame.unity
+    guid: 07cda6a9da5f9874cbaae8d61cd21bc7
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_LoadFirst.unity
+    guid: 869e1a22203cba844884bb23386ef642
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_EmptyScene.unity
+    guid: 6aff928c44288ee48beb27ee1f8f4301
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_Title.unity
+    guid: a8f3ef193f905ef44856548566fe04bc
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_Intro.unity
+    guid: 026d47dd7d0990c46be29c340c1df4c9
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_Missions.unity
+    guid: d5f793100711a4a4284861a8172bdad2
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m1d1.unity
+    guid: d2f127f6f447aa84cbd0b60b02641a13
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m1d2.unity
+    guid: 1544847ec4831354da22c28749a93554
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m1d3.unity
+    guid: 95396a162e983054094541b191bc4b9c
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m1d4.unity
+    guid: 88c00e9131ff72a4e86f59c30da26524
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m1d5.unity
+    guid: 5529f80581111484698b0dd176c6f738
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m1d6.unity
+    guid: 1d033badcdaed95408369db04b42d422
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m2d1.unity
+    guid: f5c77769c4e023644ba63506e12c8aff
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m2d2.unity
+    guid: d0c0c9adb8af91e4680045cd58233952
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m2d3.unity
+    guid: d64f65c5568d4b243a29a0c48007ae2e
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m2d4.unity
+    guid: ed1a16734b262144688b9dbd14a0afc9
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m2d5.unity
+    guid: 0b07c4ae388e3784892e34497d5b8b72
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m2d6.unity
+    guid: 8ddbaf17850467a42832f00ff6916c5a
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m3d1.unity
+    guid: c59c0bb09a15bc44ea93424291f6de4b
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m3d2.unity
+    guid: 5474b08d17c37684698153651de30630
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m3d3.unity
+    guid: e2e4a8c720260ea4d89118f9cf835405
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m3d4.unity
+    guid: f00f1cc0e8a09094192005ab81dea900
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m3d5.unity
+    guid: 0f93662de46b4ea458a36da0a10689fd
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m4d1.unity
+    guid: 3477f69d5de9d19448db5eb46bb50a76
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m4d2.unity
+    guid: a65fb89de48ba9044aca29fb6b3bee62
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m4d3.unity
+    guid: 36fdbea23b01f024bb82750fe8074fea
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m4d4.unity
+    guid: 2a92f2cc8c592964fba7d0731049040f
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m4d6.unity
+    guid: b9dd507778076014ea5919058d20dba8
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m5d1.unity
+    guid: 3ab3395fb75ffdb48a4ba7dfb2135cfd
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m5d2.unity
+    guid: 1a97c970a65274f44b1bd095299a26d3
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m5d3.unity
+    guid: 056f8ab27022dae4eb5bdeee7f8fa237
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m5d4.unity
+    guid: 68587b28388b85e4cb0521007e1ac18c
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m5d5.unity
+    guid: 7bf023caa6e5a594bb6950b06582d03f
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m5d6.unity
+    guid: 91cdab1031821684b8e6f47fc80847b0
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m6d1.unity
+    guid: 4cc7b4687490cdc4dbf73579550ed450
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m6d2.unity
+    guid: dab1cc1aa21e9ac4d8ef1d3df3f8e85e
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m6d3.unity
+    guid: db20a73a3629a9f4f88e6cbfd8705440
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m6d4.unity
+    guid: 719385e5a062bf34da5a667d22a9eeb4
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m6d5.unity
+    guid: 34665ad72f6fd96408d864626244f43a
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m6d6.unity
+    guid: 888ba429d6be82b49aa23084c95e7e03
+  m_configObjects: {}

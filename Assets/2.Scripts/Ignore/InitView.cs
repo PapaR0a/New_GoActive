@@ -7,6 +7,6 @@ public class InitView : MonoBehaviour
 {
 	void Start()
     {
-        SceneManager.LoadSceneAsync(BWConstant.SCENE_LOADFIRST, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(CPEConstant.SCENE_LOADFIRST, LoadSceneMode.Additive);
     }
 }

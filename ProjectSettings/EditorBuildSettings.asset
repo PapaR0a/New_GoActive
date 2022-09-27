@@ -6,17 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/3.Scenes/BWLoadFirst.unity
-    guid: 3f3c69be588828d44a9efa306e752bc6
+    path: Assets/3.Scenes/CPELoadFirst.unity
+    guid: 3c7b351a322efd447a13df435663a691
   - enabled: 1
     path: Assets/3.Scenes/GAGame.unity
     guid: 07cda6a9da5f9874cbaae8d61cd21bc7
   - enabled: 1
     path: Assets/GoActive/Scenes/GA_LoadFirst.unity
     guid: 869e1a22203cba844884bb23386ef642
-  - enabled: 1
-    path: Assets/GoActive/Scenes/GA_EmptyScene.unity
-    guid: 6aff928c44288ee48beb27ee1f8f4301
   - enabled: 1
     path: Assets/GoActive/Scenes/GA_Title.unity
     guid: a8f3ef193f905ef44856548566fe04bc

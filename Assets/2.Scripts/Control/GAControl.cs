@@ -22,7 +22,5 @@ public class GAControl
     {
         GAMapControl.Api = new GAMapControl();
         GAMissionsControl.Api = new GAMissionsControl();
-
-        SceneHelper.LoadSceneAdditiveAsync(GAConstants.MAIN_SCENE);
     }
 }

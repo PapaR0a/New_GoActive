@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BWLoadFirstView : MonoBehaviour {
+public class CPELoadFirstView : MonoBehaviour {
 	void Start ()
 	{
 		Application.runInBackground = true;//run in background
 	    Screen.sleepTimeout = SleepTimeout.NeverSleep;//never sleep screen
-		Application.targetFrameRate = 60;
-
-        //BWControl.Api.Init(); // TEMP AND TO BE REMOVED ONCE SEGREGATION IS COMPLETED
-		//GAControl.Api.Init();
+		Application.targetFrameRate = 30;
+		
+        CPEControl.Api.Init();
 	}
 }

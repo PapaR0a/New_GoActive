@@ -42,7 +42,7 @@ MonoBehaviour:
       objectTypeName: UnityEngine.Object
       floatValues: []
       intValues: 
-      boolValues: 01010101010100000000000000000000000000000000000000000000000000000000000000
+      boolValues: 00000000000000000000000000000000000000000000000000000000000000000000000000
       stringValues: []
       vector4Values: []
       objectReferences: []

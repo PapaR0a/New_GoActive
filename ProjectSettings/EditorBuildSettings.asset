@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/3.Scenes/CPELoadFirst.unity
     guid: 3c7b351a322efd447a13df435663a691
-  - enabled: 1
+  - enabled: 0
     path: Assets/3.Scenes/GAGame.unity
     guid: 07cda6a9da5f9874cbaae8d61cd21bc7
-  - enabled: 1
+  - enabled: 0
     path: Assets/GoActive/Scenes/GA_LoadFirst.unity
     guid: 869e1a22203cba844884bb23386ef642
-  - enabled: 1
+  - enabled: 0
     path: Assets/GoActive/Scenes/GA_Title.unity
     guid: a8f3ef193f905ef44856548566fe04bc
   - enabled: 1
@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GoActive/Scenes/GA_Missions.unity
     guid: d5f793100711a4a4284861a8172bdad2
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_Exercises.unity
+    guid: 56cbdb69db114cb42b11fd830ad9c087
   - enabled: 1
     path: Assets/GoActive/Scenes/GA_m1d1.unity
     guid: d2f127f6f447aa84cbd0b60b02641a13

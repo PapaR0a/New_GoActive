@@ -32632,7 +32632,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 80
+        x: 64
         y: 112
         width: 100
         height: 32
@@ -32807,7 +32807,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 80
+        x: 64
         y: 160
         width: 100
         height: 32

@@ -42,13 +42,26 @@ MonoBehaviour:
       objectTypeName: UnityEngine.Object
       floatValues: []
       intValues: 
-      boolValues: 01010101000000000000000000000000000000000000000000000000000000000000000000
+      boolValues: 00000000000000000000000000000000000000000000000000000000000000000000000000
+      stringValues: []
+      vector4Values: []
+      objectReferences: []
+    - useVariable: 1
+      name: GA_MissionsAvailability
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      type: 2
+      objectTypeName: UnityEngine.Object
+      floatValues: []
+      intValues: 
+      boolValues: 010101010101010000000000000000000000000000000000000000000000000000000000
       stringValues: []
       vector4Values: []
       objectReferences: []
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
+    variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   events:
   - question 2

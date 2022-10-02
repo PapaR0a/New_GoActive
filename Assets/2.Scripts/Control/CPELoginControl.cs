@@ -85,6 +85,9 @@ public class CPELoginControl
                     {
                         CPEModel.Api.GameID = pgResult.Data.Game.ID;
                         CPEModel.Api.AppID = pgResult.Data.Game.AppId;
+                        CPEModel.Api.GameUserID = pgResult.Data.GameUser.ID;
+
+                        StartSession(null);
 
                         InitializeGA();
                     }
@@ -102,20 +105,7 @@ public class CPELoginControl
     public void InitializeGA()
     {
         SceneManager.UnloadSceneAsync($"GA_Title");
-        SceneManager.LoadSceneAsync($"GAGame", LoadSceneMode.Additive);
+        //SceneManager.LoadSceneAsync($"GAGame", LoadSceneMode.Additive);
         SceneManager.LoadSceneAsync($"GA_Intro", LoadSceneMode.Additive);
     }
-
-    public void GetPrescriptionToday()
-    {
-        CoroutineHelper.Call(CPEAPIService.Api.GetPrescriptionTodayAsync((relationships) =>
-        {
-            if (relationships.Success)
-            {
-                var sample = relationships.Data[0];
-                //TODO: ...
-            }
-        }));
-    }
-   
 }

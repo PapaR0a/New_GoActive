@@ -23,4 +23,15 @@ public class GALoginView : MonoBehaviour
     {
         CPELoginControl.Api.Login(m_Email.text, m_Password.text);
     }
+
+#if UNITY_EDITOR
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            CPELoginControl.Api.Login("tester", "Aa123123!@#456");
+        }
+    }
+
+#endif
 }

@@ -42,6 +42,7 @@ public class CPEControl
 	{
 		//init other controls here
 		CPELoginControl.Api = new CPELoginControl();
+        GAControl.Api.Init();
 
         SceneManager.LoadSceneAsync(CPEConstant.SCENE_LOGIN, LoadSceneMode.Additive);
 

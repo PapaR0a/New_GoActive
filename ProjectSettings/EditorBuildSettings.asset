@@ -96,6 +96,9 @@ EditorBuildSettings:
     path: Assets/GoActive/Scenes/GA_m4d4.unity
     guid: 2a92f2cc8c592964fba7d0731049040f
   - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m4d5.unity
+    guid: 600b2ce829085a441abfc880838d7bd1
+  - enabled: 1
     path: Assets/GoActive/Scenes/GA_m4d6.unity
     guid: b9dd507778076014ea5919058d20dba8
   - enabled: 1

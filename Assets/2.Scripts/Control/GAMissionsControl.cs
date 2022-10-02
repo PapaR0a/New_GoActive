@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -39,6 +40,8 @@ public class GAMissionsControl
             GAMissionsModel.Api.unlockedMissionsCount++;
             PlayerPrefs.SetInt(GAConstants.KEY_MISSIONS_UNLOCKED, GAMissionsModel.Api.unlockedMissionsCount);
             Debug.Log($"<color=yellow> New mission unlocked successfully!</color>");
+
+            SubmitUserData();
         }
 
         RefreshMissions();
@@ -57,6 +60,9 @@ public class GAMissionsControl
 
     public void SubmitUserData()
     {
-        Debug.Log($"PlayerData: {JsonConvert.SerializeObject(GAMissionsModel.Api.GetCurrentPlayerData())}");
+        GAPlayerDataDTO playerData = GAMissionsModel.Api.GetCurrentPlayerData();
+        CPELoginControl.Api.SubmitSessionData((JObject)JToken.FromObject(playerData));
+
+        Debug.Log($"PlayerData: {JsonConvert.SerializeObject(playerData)}");
     }
 }

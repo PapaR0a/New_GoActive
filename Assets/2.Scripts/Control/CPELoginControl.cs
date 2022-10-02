@@ -31,8 +31,7 @@ public class CPELoginControl
             if (gssResult.Success)
             {
                 Debug.Log("Start session successful");
-                //TODO: get sessionID and cache in view
-                // gssResult.Data.ID
+                CPEModel.Api.SessionID = gssResult.Data.ID;
             }
             else
             {
@@ -43,18 +42,18 @@ public class CPELoginControl
     }
 
 
-    private void SubmitSessionData(long sessionID, JObject data, bool isCloseSession = false)
+    public void SubmitSessionData(JObject data, bool isCloseSession = false)
     {
 
         Utils.DebugLog("SubmitSessionData: "+ isCloseSession);
         Utils.DebugLog("SubmitSessionData with data: "+ data.ToString());
 
-        CoroutineHelper.Call(CPEAPIService.Api.PushGameSessionDataAsync(sessionID, JsonConvert.SerializeObject(data), (ssDataResult) =>
+        CoroutineHelper.Call(CPEAPIService.Api.PushGameSessionDataAsync(CPEModel.Api.SessionID, JsonConvert.SerializeObject(data), (ssDataResult) =>
         {
             Debug.Log("Submitted successful? " + ssDataResult.Success);
             if (isCloseSession)
             {
-                CloseSession(sessionID);
+                CloseSession(CPEModel.Api.SessionID);
             }
         }, null));
     }
@@ -76,13 +75,10 @@ public class CPELoginControl
 
     public void Login(string username, string password)
     {
-        InitializeGA();
-        return;
-
         CoroutineHelper.Call(CPEAPIService.Api.LoginAsync(username, password, (result) =>
             {
                 // load playground
-                CoroutineHelper.Call(CPEAPIService.Api.GetPlaygroundInfoByAppAsync("com.taggle.goactive", (pgResult) =>
+                CoroutineHelper.Call(CPEAPIService.Api.GetPlaygroundInfoByAppAsync("com.taggle.combatpd", (pgResult) =>
                 {
                     if (pgResult.Success)
                     {

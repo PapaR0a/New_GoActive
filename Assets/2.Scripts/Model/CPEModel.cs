@@ -43,6 +43,7 @@ public class CPEModel
     public long GameID { get; set; }
     public string AppID { get; set; }
     public long GameUserID { get; set; }
+    public long SessionID { get; set; }
 
     //init configs
     public void Init(JObject obj)

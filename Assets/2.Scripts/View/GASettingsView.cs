@@ -56,6 +56,8 @@ public class GASettingsView : MonoBehaviour
             PlayerPrefs.SetInt(GAConstants.KEY_UNLOCKING_TYPE, GAMissionsModel.Api.missionUnlockingType);
         }
 
+        GAMissionsControl.Api.SubmitUserData();
+
         ResetInputFields();
     }
 

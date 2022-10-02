@@ -18229,7 +18229,7 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           typeName: UnityEngine.Sprite
-          value: {fileID: 21300000, guid: 08ad0596ac36fe64e9bc0ced79e718ad, type: 3}
+          value: {fileID: 21300000, guid: 2c163b44a1e829845ac26e10ed9fc9aa, type: 3}
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
@@ -19711,7 +19711,7 @@ MonoBehaviour:
           networkSync: 0
           value: 'Read more:
 
-            
+
 
             <color=#B5EAD7>https://www.choosingwisely.org/patient-resources/imaging-tests-for-lower-back-pain/)</color>'
         fsmObjectParams:
@@ -23395,7 +23395,7 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           typeName: UnityEngine.Sprite
-          value: {fileID: 21300000, guid: 08ad0596ac36fe64e9bc0ced79e718ad, type: 3}
+          value: {fileID: 21300000, guid: cb035070f802af04e82a0bed79577a27, type: 3}
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
@@ -25739,10 +25739,9 @@ MonoBehaviour:
           value: 'You may think you need one of these tests to find out what is causing
             your back pain.
 
-            
 
-            But these tests do not always
-            help.'
+
+            But these tests do not always help.'
         fsmObjectParams:
         - useVariable: 0
           name: 
@@ -25824,7 +25823,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 00010101
+        actionEnabled: 01010101
         actionIsOpen: 00000000
         actionStartIndex: 0000000004000000080000000d000000
         actionHashCodes: 8479fb008479fb00b2cf100048c01101

@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/GoActive/Scenes/GA_LoadFirst.unity
     guid: 869e1a22203cba844884bb23386ef642
-  - enabled: 1
+  - enabled: 0
+    path: Assets/GoActive/Scenes/GA_EmptyScene.unity
+    guid: 6aff928c44288ee48beb27ee1f8f4301
+  - enabled: 0
     path: Assets/GoActive/Scenes/GA_Title.unity
     guid: a8f3ef193f905ef44856548566fe04bc
   - enabled: 1
@@ -77,6 +80,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GoActive/Scenes/GA_m3d5.unity
     guid: 0f93662de46b4ea458a36da0a10689fd
+  - enabled: 1
+    path: Assets/GoActive/Scenes/GA_m3d6.unity
+    guid: 7071679d7b7ed8c4f99249c855cf0872
   - enabled: 1
     path: Assets/GoActive/Scenes/GA_m4d1.unity
     guid: 3477f69d5de9d19448db5eb46bb50a76

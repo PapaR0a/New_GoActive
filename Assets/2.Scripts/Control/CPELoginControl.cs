@@ -105,7 +105,7 @@ public class CPELoginControl
     public void InitializeGA()
     {
         SceneManager.UnloadSceneAsync($"GA_Title");
-        SceneManager.LoadSceneAsync($"GAGame", LoadSceneMode.Additive);
+        //SceneManager.LoadSceneAsync($"GAGame", LoadSceneMode.Additive);
         SceneManager.LoadSceneAsync($"GA_Intro", LoadSceneMode.Additive);
     }
 }

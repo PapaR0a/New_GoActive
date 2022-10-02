@@ -15850,7 +15850,6 @@ GameObject:
   - component: {fileID: 246487656}
   - component: {fileID: 246487663}
   - component: {fileID: 246487662}
-  - component: {fileID: 246487661}
   - component: {fileID: 246487660}
   - component: {fileID: 246487659}
   - component: {fileID: 246487658}
@@ -16403,19 +16402,6 @@ MonoBehaviour:
           m_StringArgument: quit
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &246487661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246487655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36723bf6835a1ff4f814fc44f81c7f3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missionNumber: 0
 --- !u!114 &246487662
 MonoBehaviour:
   m_ObjectHideFlags: 0

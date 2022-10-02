@@ -9,38 +9,19 @@ public class GASettingsView : MonoBehaviour
     [SerializeField] private InputField m_minimumStepInput = null;
     [SerializeField] private InputField m_passwordInput = null;
 
-    [SerializeField] private GameObject m_diaryItemPref = null;
-    [SerializeField] private Transform m_thumbnailParent = null;
-    [SerializeField] private Transform m_optionParent = null;
-
     private void Start()
     {
         m_minimumDistanceInput.text = GAMapModel.Api.minimumDistanceToTravel.ToString();
         m_minimumStepInput.text = GAMapModel.Api.minimumStepsRequired.ToString();
     }
 
-    private void CreateDiaryItems(List<List<GAPainRecordDTO>> painRecords)
+    /// <summary>
+    /// Mission unlocking types: 0 - each day or after finishing map walk goal, 1 - unlock next mission once current unlocked mission is played
+    /// </summary>
+    /// <param name="unlockingType"></param>
+    public void OnChangeUnlockingMissions(int unlockingType)
     {
-        if (painRecords != null && painRecords.Count > 0)
-        {
-            StartCoroutine(InstantiateItems(painRecords));
-        }
-    }
-
-    private IEnumerator InstantiateItems(List<List<GAPainRecordDTO>> painRecords)
-    {
-        var waitForFrame = new WaitForEndOfFrame();
-
-        foreach(var record in painRecords)
-        {
-            var painRecordView = Instantiate(m_diaryItemPref, m_optionParent).GetComponent<GAPainRecordItemView>();
-            painRecordView.GenerateDiaryItems(record);
-            painRecordView.SetThumbnailParent(m_thumbnailParent);
-
-            yield return waitForFrame;
-        }
-
-        yield return null;
+        GAMissionsModel.Api.missionUnlockingType = unlockingType;
     }
 
     public void OnApplyChanges()
@@ -68,6 +49,11 @@ public class GASettingsView : MonoBehaviour
 
             PlayerPrefs.SetInt(GAConstants.KEY_MINIMUM_STEPS, newMinimumSteps);
             GAMapModel.Api.minimumStepsRequired = newMinimumSteps;
+        }
+
+        /// save unlocking type
+        {
+            PlayerPrefs.SetInt(GAConstants.KEY_UNLOCKING_TYPE, GAMissionsModel.Api.missionUnlockingType);
         }
 
         ResetInputFields();

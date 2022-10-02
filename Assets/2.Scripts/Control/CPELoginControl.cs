@@ -76,10 +76,13 @@ public class CPELoginControl
 
     public void Login(string username, string password)
     {
+        InitializeGA();
+        return;
+
         CoroutineHelper.Call(CPEAPIService.Api.LoginAsync(username, password, (result) =>
             {
                 // load playground
-                CoroutineHelper.Call(CPEAPIService.Api.GetPlaygroundInfoByAppAsync("com.taggle.combatpd", (pgResult) =>
+                CoroutineHelper.Call(CPEAPIService.Api.GetPlaygroundInfoByAppAsync("com.taggle.goactive", (pgResult) =>
                 {
                     if (pgResult.Success)
                     {

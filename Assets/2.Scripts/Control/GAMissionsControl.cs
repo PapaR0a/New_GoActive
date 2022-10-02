@@ -30,12 +30,13 @@ public class GAMissionsControl
     {
         int currentMission = GAMissionsModel.Api.unlockedMissionsCount;
 
-        Debug.Log($"<color=yellow>Try to unlock new mission CurrentUnlocked:{currentMission} || MissionNumber: {missionNumber}</color>");
+        Debug.Log($"<color=yellow>Try to unlock new mission CurrentUnlocked:{currentMission}</color>");
 
         if (missionNumber <= 0 || missionNumber >= currentMission)
         {
             GAMissionsModel.Api.unlockedMissionsCount++;
             PlayerPrefs.SetInt(GAConstants.KEY_MISSIONS_UNLOCKED, GAMissionsModel.Api.unlockedMissionsCount);
+            Debug.Log($"<color=yellow> New mission unlocked successfully!</color>");
         }
 
         RefreshMissions();

@@ -9,8 +9,10 @@ public class GAExitMissionView : MonoBehaviour
 
     private void Start()
     {
-        if (GAMissionsModel.Api.unlockNextMissions == 1)
+        Debug.Log($"<color=yellow>Current unlocking type: {GAMissionsModel.Api.missionUnlockingType} </color>");
+        if (GAMissionsModel.Api.missionUnlockingType == 1)
         {
+            Debug.Log($"<color=yellow> Opened Mission Number: {missionNumber}</color>");
             GAMissionsControl.Api.UnlockNewMission(missionNumber);
         }
         

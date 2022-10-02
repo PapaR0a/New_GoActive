@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GAConstants
 {
-    public const string DEFAULT_PASSWORD = "g0@ctiv3";
+    public const string DEFAULT_PASSWORD = "goactive123";
 
-    public const string KEY_UNLOCK_NEXT_MISSIONS = "KEY_UNLOCK_NEXT_MISSIONS";
+    public const string KEY_UNLOCKING_TYPE = "KEY_UNLOCKING_TYPE";
     public const string KEY_MISSIONS_UNLOCKED = "KEY_MISSIONS_UNLOCKED";
     public const string KEY_MINIMUM_DISTANCE = "KEY_MINIMUM_DISTANCE";
     public const string KEY_MINIMUM_STEPS = "KEY_MINIMUM_STEPS";

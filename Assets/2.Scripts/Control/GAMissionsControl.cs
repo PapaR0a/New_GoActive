@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ public class GAMissionsControl
     public Action<bool> onToggleMission;
     public Action onUnlockNewMission;
     public Action<int> onChangeMap;
+    public Action onUpdatePlayerData;
 
     public void RefreshMissions()
     {
@@ -51,5 +53,10 @@ public class GAMissionsControl
     public void ChangeMap(int val)
     {
         onChangeMap?.Invoke(val);
+    }
+
+    public void SubmitUserData()
+    {
+        Debug.Log($"PlayerData: {JsonConvert.SerializeObject(GAMissionsModel.Api.GetCurrentPlayerData())}");
     }
 }

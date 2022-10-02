@@ -11,7 +11,17 @@ public class GAPainDiaryView : MonoBehaviour
 
     private void Start()
     {
+        
+    }
 
+    private void Update()
+    {
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            GAMissionsControl.Api.SubmitUserData();
+        }
+#endif
     }
 
     private void CreateDiaryItems(List<List<GAPainRecordDTO>> painRecords)

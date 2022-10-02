@@ -3633,7 +3633,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -3669,7 +3669,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!1 &2044661941984965175
 GameObject:
   m_ObjectHideFlags: 0
@@ -7641,6 +7641,7 @@ GameObject:
   - component: {fileID: 2046354816237363989}
   - component: {fileID: 2046354816237363990}
   - component: {fileID: 2046354816237363991}
+  - component: {fileID: 1789405495030322586}
   m_Layer: 5
   m_Name: Dizziness
   m_TagString: Untagged
@@ -8344,7 +8345,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -8375,12 +8376,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &1789405495030322586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354816237363985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354816237363991}
 --- !u!1 &2046354816253155837
 GameObject:
   m_ObjectHideFlags: 0
@@ -8633,6 +8648,7 @@ GameObject:
   - component: {fileID: 2046354816294912979}
   - component: {fileID: 2046354816294912988}
   - component: {fileID: 2046354816294912989}
+  - component: {fileID: 5852250350021151055}
   m_Layer: 5
   m_Name: Outdoor
   m_TagString: Untagged
@@ -9336,7 +9352,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -9367,12 +9383,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &5852250350021151055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354816294912991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354816294912989}
 --- !u!1 &2046354816295394042
 GameObject:
   m_ObjectHideFlags: 0
@@ -11344,7 +11374,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -11380,7 +11410,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!1 &2046354816314340082
 GameObject:
   m_ObjectHideFlags: 0
@@ -13448,6 +13478,7 @@ GameObject:
   - component: {fileID: 2046354816410423852}
   - component: {fileID: 2046354816410423853}
   - component: {fileID: 2046354816410423854}
+  - component: {fileID: 854997122858865477}
   m_Layer: 5
   m_Name: Aching
   m_TagString: Untagged
@@ -14151,7 +14182,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -14182,12 +14213,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &854997122858865477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354816410423848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354816410423854}
 --- !u!1 &2046354816411075739
 GameObject:
   m_ObjectHideFlags: 0
@@ -14203,6 +14248,7 @@ GameObject:
   - component: {fileID: 2046354816411075743}
   - component: {fileID: 2046354816411075736}
   - component: {fileID: 2046354816411075737}
+  - component: {fileID: 674475751869793251}
   m_Layer: 5
   m_Name: Talking to someone
   m_TagString: Untagged
@@ -14906,7 +14952,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -14937,12 +14983,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &674475751869793251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354816411075739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354816411075737}
 --- !u!1 &2046354816414504099
 GameObject:
   m_ObjectHideFlags: 0
@@ -15113,6 +15173,7 @@ GameObject:
   - component: {fileID: 2046354816417417866}
   - component: {fileID: 2046354816417417867}
   - component: {fileID: 2046354816417417876}
+  - component: {fileID: 2990825088958423178}
   m_Layer: 5
   m_Name: Burning
   m_TagString: Untagged
@@ -15816,7 +15877,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -15847,12 +15908,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &2990825088958423178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354816417417878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354816417417876}
 --- !u!1 &2046354816427896218
 GameObject:
   m_ObjectHideFlags: 0
@@ -18654,6 +18729,7 @@ GameObject:
   - component: {fileID: 2046354816616913491}
   - component: {fileID: 2046354816616913500}
   - component: {fileID: 2046354816616913501}
+  - component: {fileID: 1195811827622918359}
   m_Layer: 5
   m_Name: Massage
   m_TagString: Untagged
@@ -19357,7 +19433,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -19388,12 +19464,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &1195811827622918359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354816616913503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354816616913501}
 --- !u!1 &2046354816619182821
 GameObject:
   m_ObjectHideFlags: 0
@@ -19488,6 +19578,7 @@ GameObject:
   - component: {fileID: 2046354816619230847}
   - component: {fileID: 2046354816619230840}
   - component: {fileID: 2046354816619230841}
+  - component: {fileID: 2378318733464834576}
   m_Layer: 5
   m_Name: Sitting
   m_TagString: Untagged
@@ -20191,7 +20282,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -20222,12 +20313,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &2378318733464834576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354816619230843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354816619230841}
 --- !u!1 &2046354816635585629
 GameObject:
   m_ObjectHideFlags: 0
@@ -20420,6 +20525,7 @@ GameObject:
   - component: {fileID: 2046354816652950118}
   - component: {fileID: 2046354816652950119}
   - component: {fileID: 2046354816652950112}
+  - component: {fileID: 481801558524403836}
   m_Layer: 5
   m_Name: Mental Fogginess
   m_TagString: Untagged
@@ -21123,7 +21229,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -21154,12 +21260,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &481801558524403836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354816652950114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354816652950112}
 --- !u!1 &2046354816660603153
 GameObject:
   m_ObjectHideFlags: 0
@@ -21456,6 +21576,7 @@ GameObject:
   - component: {fileID: 2046354816665237370}
   - component: {fileID: 2046354816665237371}
   - component: {fileID: 2046354816665237316}
+  - component: {fileID: 7851164973201563376}
   m_Layer: 5
   m_Name: Throbbing
   m_TagString: Untagged
@@ -22159,7 +22280,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -22190,12 +22311,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &7851164973201563376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354816665237318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354816665237316}
 --- !u!1 &2046354816676759989
 GameObject:
   m_ObjectHideFlags: 0
@@ -25025,6 +25160,7 @@ GameObject:
   - component: {fileID: 2046354816783786068}
   - component: {fileID: 2046354816783786069}
   - component: {fileID: 2046354816783786070}
+  - component: {fileID: 1464666288620908646}
   m_Layer: 5
   m_Name: Irregular Breathing
   m_TagString: Untagged
@@ -25728,7 +25864,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -25759,12 +25895,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &1464666288620908646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354816783786064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354816783786070}
 --- !u!1 &2046354816784486531
 GameObject:
   m_ObjectHideFlags: 0
@@ -26194,7 +26344,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -26230,7 +26380,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!1 &2046354816793648033
 GameObject:
   m_ObjectHideFlags: 0
@@ -26498,6 +26648,7 @@ GameObject:
   - component: {fileID: 2046354816804014639}
   - component: {fileID: 2046354816804014632}
   - component: {fileID: 2046354816804014633}
+  - component: {fileID: 8376842884511125652}
   m_Layer: 5
   m_Name: Sharp
   m_TagString: Untagged
@@ -27201,7 +27352,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -27232,12 +27383,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &8376842884511125652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354816804014635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354816804014633}
 --- !u!1 &2046354816810554237
 GameObject:
   m_ObjectHideFlags: 0
@@ -27652,6 +27817,7 @@ GameObject:
   - component: {fileID: 2046354816844599399}
   - component: {fileID: 2046354816844599392}
   - component: {fileID: 2046354816844599393}
+  - component: {fileID: 1714988089792370785}
   m_Layer: 5
   m_Name: Bed
   m_TagString: Untagged
@@ -28355,7 +28521,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -28386,12 +28552,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &1714988089792370785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354816844599395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354816844599393}
 --- !u!1 &2046354816856600182
 GameObject:
   m_ObjectHideFlags: 0
@@ -29760,6 +29940,7 @@ GameObject:
   - component: {fileID: 2046354816905339762}
   - component: {fileID: 2046354816905339763}
   - component: {fileID: 2046354816905339772}
+  - component: {fileID: 7670812536355090260}
   m_Layer: 5
   m_Name: Home
   m_TagString: Untagged
@@ -30463,7 +30644,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -30494,12 +30675,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &7670812536355090260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354816905339774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354816905339772}
 --- !u!1 &2046354816921028668
 GameObject:
   m_ObjectHideFlags: 0
@@ -31240,6 +31435,7 @@ GameObject:
   - component: {fileID: 2046354816962241694}
   - component: {fileID: 2046354816962241695}
   - component: {fileID: 2046354816962241688}
+  - component: {fileID: 6039846573107646561}
   m_Layer: 5
   m_Name: Light Touch/ Clothing
   m_TagString: Untagged
@@ -31943,7 +32139,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -31974,12 +32170,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &6039846573107646561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354816962241690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354816962241688}
 --- !u!1 &2046354816980064550
 GameObject:
   m_ObjectHideFlags: 0
@@ -31993,6 +32203,7 @@ GameObject:
   - component: {fileID: 2046354816980064730}
   - component: {fileID: 2046354816980064731}
   - component: {fileID: 2046354816980064548}
+  - component: {fileID: 4536210091915425125}
   m_Layer: 5
   m_Name: Seconds
   m_TagString: Untagged
@@ -32277,7 +32488,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -32308,12 +32519,12 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!114 &2046354816980064548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32358,6 +32569,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4536210091915425125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354816980064550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354816980064731}
 --- !u!1 &2046354817030861123
 GameObject:
   m_ObjectHideFlags: 0
@@ -33931,7 +34156,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -33967,7 +34192,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!114 &1230948006762727869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33981,6 +34206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDate: {fileID: 2046354817034432512}
+  recordThumbnail: {fileID: 2046354816214682662}
   diaryItems:
   - {fileID: 4098425103966860481}
   - {fileID: 7051723519739526508}
@@ -37126,6 +37352,7 @@ GameObject:
   - component: {fileID: 2046354817217023639}
   - component: {fileID: 2046354817217023632}
   - component: {fileID: 2046354817217023633}
+  - component: {fileID: 2201703904301092692}
   m_Layer: 5
   m_Name: School
   m_TagString: Untagged
@@ -37829,7 +38056,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -37860,12 +38087,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &2201703904301092692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354817217023635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354817217023633}
 --- !u!1 &2046354817227811879
 GameObject:
   m_ObjectHideFlags: 0
@@ -38442,6 +38683,7 @@ GameObject:
   - component: {fileID: 2046354817263359550}
   - component: {fileID: 2046354817263359551}
   - component: {fileID: 2046354817263359544}
+  - component: {fileID: 8416785199699487446}
   m_Layer: 5
   m_Name: Minutes
   m_TagString: Untagged
@@ -38726,7 +38968,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -38757,12 +38999,12 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!114 &2046354817263359544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38807,6 +39049,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8416785199699487446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354817263359546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354817263359551}
 --- !u!1 &2046354817269050135
 GameObject:
   m_ObjectHideFlags: 0
@@ -39059,6 +39315,7 @@ GameObject:
   - component: {fileID: 2046354817306335411}
   - component: {fileID: 2046354817306335420}
   - component: {fileID: 2046354817306335421}
+  - component: {fileID: 1104767350387412396}
   m_Layer: 5
   m_Name: Ice
   m_TagString: Untagged
@@ -39762,7 +40019,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -39793,12 +40050,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &1104767350387412396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354817306335423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354817306335421}
 --- !u!1 &2046354817319788523
 GameObject:
   m_ObjectHideFlags: 0
@@ -42228,6 +42499,7 @@ GameObject:
   - component: {fileID: 2046354817392675029}
   - component: {fileID: 2046354817392675030}
   - component: {fileID: 2046354817392675031}
+  - component: {fileID: 3041797208791712213}
   m_Layer: 5
   m_Name: Negative Mood
   m_TagString: Untagged
@@ -42931,7 +43203,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -42962,12 +43234,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &3041797208791712213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354817392675025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354817392675031}
 --- !u!1 &2046354817394208277
 GameObject:
   m_ObjectHideFlags: 0
@@ -43370,6 +43656,7 @@ GameObject:
   - component: {fileID: 2046354817432617526}
   - component: {fileID: 2046354817432617527}
   - component: {fileID: 2046354817432617520}
+  - component: {fileID: 4744469355177176950}
   m_Layer: 5
   m_Name: Shopping
   m_TagString: Untagged
@@ -44073,7 +44360,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -44104,12 +44391,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &4744469355177176950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354817432617522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354817432617520}
 --- !u!1 &2046354817452266633
 GameObject:
   m_ObjectHideFlags: 0
@@ -45218,6 +45519,7 @@ GameObject:
   - component: {fileID: 2046354817492817700}
   - component: {fileID: 2046354817492817701}
   - component: {fileID: 2046354817492817702}
+  - component: {fileID: 1710724645401961720}
   m_Layer: 5
   m_Name: Pin and Needles
   m_TagString: Untagged
@@ -45921,7 +46223,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -45952,12 +46254,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &1710724645401961720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354817492817696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354817492817702}
 --- !u!1 &2046354817510247810
 GameObject:
   m_ObjectHideFlags: 0
@@ -46139,7 +46455,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -46175,7 +46491,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!1 &2046354817515775735
 GameObject:
   m_ObjectHideFlags: 0
@@ -46270,6 +46586,7 @@ GameObject:
   - component: {fileID: 2046354817540548332}
   - component: {fileID: 2046354817540548333}
   - component: {fileID: 2046354817540548334}
+  - component: {fileID: 3737871748328565727}
   m_Layer: 5
   m_Name: Car
   m_TagString: Untagged
@@ -46973,7 +47290,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -47004,12 +47321,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &3737871748328565727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354817540548328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354817540548334}
 --- !u!1 &2046354817541224748
 GameObject:
   m_ObjectHideFlags: 0
@@ -48114,7 +48445,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -48150,7 +48481,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!1 &2046354817559912206
 GameObject:
   m_ObjectHideFlags: 0
@@ -48894,7 +49225,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -48930,7 +49261,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!1 &2046354817606472540
 GameObject:
   m_ObjectHideFlags: 0
@@ -49795,6 +50126,7 @@ GameObject:
   - component: {fileID: 2046354817606548969}
   - component: {fileID: 2046354817606548970}
   - component: {fileID: 2046354817606548971}
+  - component: {fileID: 624534256011042966}
   m_Layer: 5
   m_Name: Work
   m_TagString: Untagged
@@ -50498,7 +50830,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -50529,12 +50861,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &624534256011042966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354817606548981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354817606548971}
 --- !u!1 &2046354817615709684
 GameObject:
   m_ObjectHideFlags: 0
@@ -50550,6 +50896,7 @@ GameObject:
   - component: {fileID: 2046354817615709672}
   - component: {fileID: 2046354817615709673}
   - component: {fileID: 2046354817615709674}
+  - component: {fileID: 7654657464933422436}
   m_Layer: 5
   m_Name: Anxiety
   m_TagString: Untagged
@@ -51253,7 +51600,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -51284,12 +51631,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &7654657464933422436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354817615709684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354817615709674}
 --- !u!1 &2046354817620454762
 GameObject:
   m_ObjectHideFlags: 0
@@ -51471,7 +51832,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -51507,7 +51868,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!1 &2046354817639042475
 GameObject:
   m_ObjectHideFlags: 0
@@ -51878,7 +52239,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 00000000
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -51914,7 +52275,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!1 &2046354817648440781
 GameObject:
   m_ObjectHideFlags: 0
@@ -54965,7 +55326,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -55001,7 +55362,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!1 &2046354817814772228
 GameObject:
   m_ObjectHideFlags: 0
@@ -55017,6 +55378,7 @@ GameObject:
   - component: {fileID: 2046354817814772280}
   - component: {fileID: 2046354817814772281}
   - component: {fileID: 2046354817814772282}
+  - component: {fileID: 1868445812189722576}
   m_Layer: 5
   m_Name: Standing
   m_TagString: Untagged
@@ -55720,7 +56082,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -55751,12 +56113,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &1868445812189722576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354817814772228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354817814772282}
 --- !u!1 &2046354817820473228
 GameObject:
   m_ObjectHideFlags: 0
@@ -55851,6 +56227,7 @@ GameObject:
   - component: {fileID: 2046354817821407621}
   - component: {fileID: 2046354817821407622}
   - component: {fileID: 2046354817821407623}
+  - component: {fileID: 8820473524928970163}
   m_Layer: 5
   m_Name: Depression
   m_TagString: Untagged
@@ -56554,7 +56931,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -56585,12 +56962,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &8820473524928970163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354817821407617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354817821407623}
 --- !u!1 &2046354817827197696
 GameObject:
   m_ObjectHideFlags: 0
@@ -56642,6 +57033,7 @@ GameObject:
   - component: {fileID: 2046354817837369879}
   - component: {fileID: 2046354817837369872}
   - component: {fileID: 2046354817837369873}
+  - component: {fileID: 3544014708594231068}
   m_Layer: 5
   m_Name: Inactivity
   m_TagString: Untagged
@@ -57345,7 +57737,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -57376,12 +57768,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &3544014708594231068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354817837369875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354817837369873}
 --- !u!1 &2046354817848081091
 GameObject:
   m_ObjectHideFlags: 0
@@ -60800,7 +61206,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -60836,7 +61242,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!1 &2046354817867876898
 GameObject:
   m_ObjectHideFlags: 0
@@ -61505,6 +61911,7 @@ GameObject:
   - component: {fileID: 2046354817902302789}
   - component: {fileID: 2046354817902302790}
   - component: {fileID: 2046354817902302791}
+  - component: {fileID: 3085479240576620839}
   m_Layer: 5
   m_Name: Hours
   m_TagString: Untagged
@@ -61789,7 +62196,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -61820,12 +62227,12 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!114 &2046354817902302791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61870,6 +62277,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3085479240576620839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354817902302785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354817902302790}
 --- !u!1 &2046354817905378895
 GameObject:
   m_ObjectHideFlags: 0
@@ -63356,6 +63777,7 @@ GameObject:
   - component: {fileID: 2046354817920188802}
   - component: {fileID: 2046354817920188803}
   - component: {fileID: 2046354817920188812}
+  - component: {fileID: 2709584869037689868}
   m_Layer: 5
   m_Name: Heat
   m_TagString: Untagged
@@ -64059,7 +64481,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -64090,12 +64512,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &2709584869037689868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354817920188814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354817920188812}
 --- !u!1 &2046354817920449732
 GameObject:
   m_ObjectHideFlags: 0
@@ -64896,6 +65332,7 @@ GameObject:
   - component: {fileID: 2046354817947112436}
   - component: {fileID: 2046354817947112437}
   - component: {fileID: 2046354817947112438}
+  - component: {fileID: 8600118356623968581}
   m_Layer: 5
   m_Name: Electric Shocks
   m_TagString: Untagged
@@ -65599,7 +66036,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -65630,12 +66067,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &8600118356623968581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354817947112432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354817947112438}
 --- !u!1 &2046354817957636451
 GameObject:
   m_ObjectHideFlags: 0
@@ -66778,6 +67229,7 @@ GameObject:
   - component: {fileID: 2046354818018806964}
   - component: {fileID: 2046354818018806965}
   - component: {fileID: 2046354818018806966}
+  - component: {fileID: 7201686923623079641}
   m_Layer: 5
   m_Name: Dull
   m_TagString: Untagged
@@ -67481,7 +67933,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -67512,12 +67964,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &7201686923623079641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354818018806960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354818018806966}
 --- !u!1 &2046354818049009240
 GameObject:
   m_ObjectHideFlags: 0
@@ -67533,6 +67999,7 @@ GameObject:
   - component: {fileID: 2046354818049009244}
   - component: {fileID: 2046354818049009245}
   - component: {fileID: 2046354818049009246}
+  - component: {fileID: 4569924475575432054}
   m_Layer: 5
   m_Name: Stress
   m_TagString: Untagged
@@ -68236,7 +68703,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -68267,12 +68734,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &4569924475575432054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354818049009240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354818049009246}
 --- !u!1 &2046354818059755174
 GameObject:
   m_ObjectHideFlags: 0
@@ -68600,6 +69081,7 @@ GameObject:
   - component: {fileID: 2046354818082765990}
   - component: {fileID: 2046354818082765991}
   - component: {fileID: 2046354818082765984}
+  - component: {fileID: 8098166213747180136}
   m_Layer: 5
   m_Name: Walking
   m_TagString: Untagged
@@ -69303,7 +69785,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -69334,12 +69816,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &8098166213747180136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354818082765986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354818082765984}
 --- !u!1 &2046354818092184234
 GameObject:
   m_ObjectHideFlags: 0
@@ -69738,6 +70234,7 @@ GameObject:
   - component: {fileID: 2046354818117451315}
   - component: {fileID: 2046354818117451324}
   - component: {fileID: 2046354818117451314}
+  - component: {fileID: 941637414797171495}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -70090,7 +70587,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -70121,12 +70618,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 576
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &941637414797171495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354818117451326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354818117451314}
 --- !u!1 &2046354818123407331
 GameObject:
   m_ObjectHideFlags: 0
@@ -70300,6 +70811,7 @@ GameObject:
   - component: {fileID: 2046354818125811615}
   - component: {fileID: 2046354818125811608}
   - component: {fileID: 2046354818125811609}
+  - component: {fileID: 1468610898504568557}
   m_Layer: 5
   m_Name: Distraction
   m_TagString: Untagged
@@ -71003,7 +71515,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -71034,12 +71546,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &1468610898504568557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354818125811611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354818125811609}
 --- !u!1 &2046354818137576532
 GameObject:
   m_ObjectHideFlags: 0
@@ -71443,6 +71969,7 @@ GameObject:
   - component: {fileID: 2046354818169560832}
   - component: {fileID: 2046354818169560833}
   - component: {fileID: 2046354818169560834}
+  - component: {fileID: 5887015882789731275}
   m_Layer: 5
   m_Name: Vomiting
   m_TagString: Untagged
@@ -72146,7 +72673,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -72177,12 +72704,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &5887015882789731275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354818169560844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354818169560834}
 --- !u!1 &2046354818171106919
 GameObject:
   m_ObjectHideFlags: 0
@@ -72277,6 +72818,7 @@ GameObject:
   - component: {fileID: 2046354818177841799}
   - component: {fileID: 2046354818177841792}
   - component: {fileID: 2046354818177841793}
+  - component: {fileID: 6064709442613135610}
   m_Layer: 5
   m_Name: Lack of Sleep
   m_TagString: Untagged
@@ -72980,7 +73522,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -73011,12 +73553,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &6064709442613135610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354818177841795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354818177841793}
 --- !u!1 &2046354818182022081
 GameObject:
   m_ObjectHideFlags: 0
@@ -75078,7 +75634,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -75114,7 +75670,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!1 &2046354818254184839
 GameObject:
   m_ObjectHideFlags: 0
@@ -75280,6 +75836,7 @@ GameObject:
   - component: {fileID: 2046354818273909528}
   - component: {fileID: 2046354818273909529}
   - component: {fileID: 2046354818273909530}
+  - component: {fileID: 8365972451468363643}
   m_Layer: 5
   m_Name: Nausea
   m_TagString: Untagged
@@ -75983,7 +76540,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -76014,12 +76571,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &8365972451468363643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354818273909604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354818273909530}
 --- !u!1 &2046354818275959287
 GameObject:
   m_ObjectHideFlags: 0
@@ -76510,6 +77081,7 @@ GameObject:
   - component: {fileID: 2046354818281080819}
   - component: {fileID: 2046354818281080828}
   - component: {fileID: 2046354818281080829}
+  - component: {fileID: 2346325072700317278}
   m_Layer: 5
   m_Name: Units
   m_TagString: Untagged
@@ -76851,7 +77423,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -76882,12 +77454,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &2346325072700317278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354818281080831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354818281080829}
 --- !u!1 &2046354818281423834
 GameObject:
   m_ObjectHideFlags: 0
@@ -76982,6 +77568,7 @@ GameObject:
   - component: {fileID: 2046354818284968941}
   - component: {fileID: 2046354818284968942}
   - component: {fileID: 2046354818284968943}
+  - component: {fileID: 4949847613560321920}
   m_Layer: 5
   m_Name: Sleep
   m_TagString: Untagged
@@ -77685,7 +78272,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -77716,12 +78303,26 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 32
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
+--- !u!114 &4949847613560321920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046354818284968937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad323e26f6475e1418442dbe3aa94632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 2046354818284968943}
 --- !u!1 &2046354818299838288
 GameObject:
   m_ObjectHideFlags: 0

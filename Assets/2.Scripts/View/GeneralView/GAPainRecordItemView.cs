@@ -29,15 +29,7 @@ public class GAPainRecordItemView : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            GetDiaryData();
-        }
-    }
-
-    private void GetDiaryData()
+    public List<GAPainRecordDTO> GetDiaryData()
     {
         List<GAPainRecordDTO> ItemsData = new List<GAPainRecordDTO>();
 
@@ -46,6 +38,6 @@ public class GAPainRecordItemView : MonoBehaviour
             ItemsData.Add(data.GetPainRecord());
         }
 
-        Debug.LogError($"{JsonConvert.SerializeObject(ItemsData)}");
+        return ItemsData;
     }
 }

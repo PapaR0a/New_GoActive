@@ -32,13 +32,6 @@ public class GAMapView : MonoBehaviour
         {
             GAMapControl.Api.MoveToTarget();
         }
-
-#if UNITY_EDITOR
-        if (Input.GetKey(KeyCode.Space))
-        {
-            GAMapControl.Api.MoveToTarget();
-        }
-#endif
     }
 
     private void Start()

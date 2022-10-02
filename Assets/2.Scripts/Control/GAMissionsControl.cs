@@ -26,10 +26,17 @@ public class GAMissionsControl
         }
     }
 
-    public void UnlockNewMission()
+    public void UnlockNewMission(int missionNumber = -1)
     {
-        GAMissionsModel.Api.unlockedMissionsCount++;
-        PlayerPrefs.SetInt(GAConstants.KEY_MISSIONS_UNLOCKED, GAMissionsModel.Api.unlockedMissionsCount);
+        int currentMission = GAMissionsModel.Api.unlockedMissionsCount;
+
+        Debug.Log($"<color=yellow>Try to unlock new mission CurrentUnlocked:{currentMission} || MissionNumber: {missionNumber}</color>");
+
+        if (missionNumber <= 0 || missionNumber >= currentMission)
+        {
+            GAMissionsModel.Api.unlockedMissionsCount++;
+            PlayerPrefs.SetInt(GAConstants.KEY_MISSIONS_UNLOCKED, GAMissionsModel.Api.unlockedMissionsCount);
+        }
 
         RefreshMissions();
     }

@@ -9,7 +9,7 @@ public class GAPlayerDataDTO
     public List<bool> missions;
     public List<bool> availableMissions;
     public List<List<GAPainRecordDTO>> painDiaryRecords;
-    public bool nextMissionUnlocking;
+    public bool nextMissionUnlocking = false;
 
     public GAPlayerDataDTO(int lifePoints = 0, List<bool> missions = null, List<bool> availableMissions = null, List<List<GAPainRecordDTO>> painDiaryRecords = null, bool nextMissionUnlocking = false)
     {

@@ -16,4 +16,5 @@ public class GAMissionsModel
     }
 
     public int unlockedMissionsCount = PlayerPrefs.GetInt(GAConstants.KEY_MISSIONS_UNLOCKED, 0);
+    public int unlockNextMissions = PlayerPrefs.GetInt(GAConstants.KEY_UNLOCK_NEXT_MISSIONS, 0);
 }

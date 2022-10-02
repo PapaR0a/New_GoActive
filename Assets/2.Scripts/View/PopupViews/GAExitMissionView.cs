@@ -5,14 +5,21 @@ using UnityEngine.UI;
 
 public class GAExitMissionView : MonoBehaviour
 {
+    public int missionNumber;
+
     private void Start()
     {
-        gameObject.GetComponent<Button>().onClick.AddListener( ()=> GAMissionsControl.Api.onToggleMission?.Invoke(true) );
+        if (GAMissionsModel.Api.unlockNextMissions == 1)
+        {
+            GAMissionsControl.Api.UnlockNewMission(missionNumber);
+        }
+        
+        //gameObject.GetComponent<Button>()?.onClick.AddListener( ()=> GAMissionsControl.Api.onToggleMission?.Invoke(true) );
     }
 
     private void OnDestroy()
     {
         GAMissionsControl.Api.onToggleMission?.Invoke(true);
-        gameObject.GetComponent<Button>().onClick.AddListener( () => GAMissionsControl.Api.onToggleMission?.Invoke(true) );
+        //gameObject.GetComponent<Button>()?.onClick.AddListener( () => GAMissionsControl.Api.onToggleMission?.Invoke(true) );
     }
 }

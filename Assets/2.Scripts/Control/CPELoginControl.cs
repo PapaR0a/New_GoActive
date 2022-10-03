@@ -82,7 +82,7 @@ public class CPELoginControl
                 {
                     if (pgResult.Success)
                     {
-                        Debug.LogError($"LOGIN SUCCESS: {JsonConvert.SerializeObject(pgResult.Data)}");
+                        Debug.Log($"<color=yellow>LOGIN SUCCESS: {JsonConvert.SerializeObject(pgResult.Data)} </color>");
 
                         CPEModel.Api.GameID = pgResult.Data.Game.ID;
                         CPEModel.Api.AppID = pgResult.Data.Game.AppId;

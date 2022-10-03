@@ -10,13 +10,13 @@ public class GARewardsView : MonoBehaviour
 
     private void Start()
     {
-        m_walkButton.onClick.AddListener(() => { GAMapControl.Api.ChooseReward(false); } );
-        m_missionButton.onClick.AddListener(() => { GAMapControl.Api.ChooseReward(true); });
+        //m_walkButton.onClick.AddListener(() => { GAMapControl.Api.ChooseReward(false); } );
+        //m_missionButton.onClick.AddListener(() => { GAMapControl.Api.ChooseReward(true); });
     }
 
     private void OnDestroy()
     {
-        m_walkButton.onClick.RemoveAllListeners();
-        m_missionButton.onClick.RemoveAllListeners();
+        //m_walkButton.onClick.RemoveAllListeners();
+        //m_missionButton.onClick.RemoveAllListeners();
     }
 }

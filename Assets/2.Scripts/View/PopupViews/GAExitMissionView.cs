@@ -21,6 +21,8 @@ public class GAExitMissionView : MonoBehaviour
 
     private void OnDestroy()
     {
+        GAMissionsControl.Api.SubmitUserData();
+
         GAMissionsControl.Api.onToggleMainCamera?.Invoke(true);
 
         GAMissionsControl.Api.onToggleMission?.Invoke(true);

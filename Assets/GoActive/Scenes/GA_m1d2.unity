@@ -14839,7 +14839,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: "This may sound strange, but some pain is atually good for us\r"
+          value: "This may sound strange, but some pain is actually good for us\r"
         fsmObjectParams:
         - useVariable: 0
           name: 
@@ -19169,7 +19169,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: Just like you have a digestive sytem that breaks down food
+          value: Just like you have a digestive system that breaks down food
         fsmObjectParams:
         - useVariable: 0
           name: 

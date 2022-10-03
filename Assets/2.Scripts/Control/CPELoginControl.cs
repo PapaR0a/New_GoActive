@@ -96,7 +96,7 @@ public class CPELoginControl
                     {
                         Debug.Log("LoginAsync - Login Error");
                     }
-                }));
+                }, 5));
 
                 // load prescription today
                 //GetPrescriptionToday();

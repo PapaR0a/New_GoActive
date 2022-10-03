@@ -15,5 +15,6 @@ public class CPELoadFirstView : MonoBehaviour {
 	void OnApplicationQuit()
 	{
 		GAMissionsControl.Api.SubmitUserData();
+		CPELoginControl.Api.CloseSession();
 	}
 }

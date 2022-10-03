@@ -12,10 +12,13 @@ public class GAMissionsView : MonoBehaviour
     [SerializeField] private Image m_mapName = null;
     [SerializeField] private Text m_mapInfo = null;
 
+    [SerializeField] private GameObject m_mainCamera = null;
+
     private void Start()
     {
         GAMissionsControl.Api.onUnlockNewMission += OnUnlockNewMission;
         GAMissionsControl.Api.onChangeMap += OnChangeMap;
+        GAMissionsControl.Api.onToggleMainCamera += ToggleMainCamera;
 
         foreach (var btn in m_missionBtns)
         {
@@ -34,11 +37,17 @@ public class GAMissionsView : MonoBehaviour
     {
         GAMissionsControl.Api.onUnlockNewMission -= OnUnlockNewMission;
         GAMissionsControl.Api.onChangeMap -= OnChangeMap;
+        GAMissionsControl.Api.onToggleMainCamera -= ToggleMainCamera;
 
         foreach (var btn in m_missionBtns)
         {
             btn.onClick.RemoveAllListeners();
         }
+    }
+
+    private void ToggleMainCamera(bool val)
+    {
+        m_mainCamera.SetActive(val);
     }
 
     private void OnUnlockNewMission()

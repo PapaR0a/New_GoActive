@@ -20,6 +20,7 @@ public class GAMissionsControl
     public Action onUnlockNewMission;
     public Action<int> onChangeMap;
     public Action onUpdatePlayerData;
+    public Action<bool> onToggleMainCamera;
 
     public void RefreshMissions()
     {

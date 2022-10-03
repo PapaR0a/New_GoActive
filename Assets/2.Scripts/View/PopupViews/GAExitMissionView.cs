@@ -15,13 +15,14 @@ public class GAExitMissionView : MonoBehaviour
             Debug.Log($"<color=yellow> Opened Mission Number: {missionNumber}</color>");
             GAMissionsControl.Api.UnlockNewMission(missionNumber);
         }
-        
-        //gameObject.GetComponent<Button>()?.onClick.AddListener( ()=> GAMissionsControl.Api.onToggleMission?.Invoke(true) );
+
+        GAMissionsControl.Api.onToggleMainCamera?.Invoke(false);
     }
 
     private void OnDestroy()
     {
+        GAMissionsControl.Api.onToggleMainCamera?.Invoke(true);
+
         GAMissionsControl.Api.onToggleMission?.Invoke(true);
-        //gameObject.GetComponent<Button>()?.onClick.AddListener( () => GAMissionsControl.Api.onToggleMission?.Invoke(true) );
     }
 }

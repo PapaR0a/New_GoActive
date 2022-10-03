@@ -34,14 +34,27 @@ public class GAMapView : MonoBehaviour
         }
     }
 
+    private void UpdatePlayerData()
+    {
+        GAMissionsModel.Api.distanceRemaining = GAMapModel.Api.distanceRemaining;
+        GAMissionsModel.Api.distanceTraveled = GAMapModel.Api.distanceTraveled;
+        GAMissionsModel.Api.distanceTotalTraveled = GAMapModel.Api.totalDistanceTraveled;
+
+        GAMissionsModel.Api.stepsMade = GAMapModel.Api.currentStepsCount;
+    }
+
     private void Start()
     {
         BindListeners();
+
+        GAMissionsControl.Api.onUpdatePlayerData += UpdatePlayerData;
     }
 
     private void OnDestroy()
     {
         UnBindListeners();
+
+        GAMissionsControl.Api.onUpdatePlayerData -= UpdatePlayerData;
     }
 
     private void BindListeners()

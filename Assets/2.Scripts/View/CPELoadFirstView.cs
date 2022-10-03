@@ -11,4 +11,9 @@ public class CPELoadFirstView : MonoBehaviour {
 		
         CPEControl.Api.Init();
 	}
+
+	void OnApplicationQuit()
+	{
+		GAMissionsControl.Api.SubmitUserData();
+	}
 }

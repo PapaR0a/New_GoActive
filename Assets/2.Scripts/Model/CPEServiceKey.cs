@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CPEServiceKey
 {
-    // public static string PARAM_APP_CONFIG_DATA
-    // {
-    //     get { return "app_config"; }
-    // }
+    public static string PARAM_SCHEMA_APP_DATA
+    {
+        get { return "app_schema"; }
+    }
 }

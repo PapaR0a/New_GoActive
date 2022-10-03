@@ -61,8 +61,8 @@ public class GAMissionsControl
     public void SubmitUserData()
     {
         GAPlayerDataDTO playerData = GAMissionsModel.Api.GetCurrentPlayerData();
-        CPELoginControl.Api.SubmitSessionData((JObject)JToken.FromObject(playerData));
+        CPELoginControl.Api.SubmitAppData((JObject)JToken.FromObject(playerData));
 
-        Debug.Log($"PlayerData: {JsonConvert.SerializeObject(playerData)}");
+        Debug.Log($"<color=yellow> PlayerData: {JsonConvert.SerializeObject(playerData)} </color>");
     }
 }

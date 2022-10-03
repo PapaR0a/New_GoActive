@@ -37,13 +37,12 @@ public class GAMapControl
 
     public void UpdateStats(Vector2 newPos)
     {
-        GAMapModel.Api.currentStepsCount += UnityEngine.Random.Range(50, 101); // TEMP SHOULD USE HA STEPS COUNTER???
-
         float distanceToGoal = 0f;
 
         if (!GAMapModel.Api.isInitialUpdate)
         {
             var distanceTraveled = OnlineMapsUtils.DistanceBetweenPoints(GAMapModel.Api.previousPlayerCoordinates, newPos).magnitude;
+            GAMapModel.Api.currentStepsCount += (int)(UnityEngine.Random.Range(1, 3) * (distanceTraveled * 1000));
             GAMapModel.Api.distanceTraveled += distanceTraveled;
             GAMapModel.Api.totalDistanceTraveled += distanceTraveled;
         }
@@ -140,7 +139,6 @@ public class GAMapControl
     public void ConfirmSteps()
     {
         GAMapModel.Api.menuState = GAMapModel.MapState.IsPlaying;
-        GAMapModel.Api.currentStepsCount = 900;
 
         UpdateStats(GAMapModel.Api.playerMarker.position);
 

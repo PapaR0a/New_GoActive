@@ -24,6 +24,13 @@ public class GAMissionsModel
 
     private GAPlayerDataDTO playerData = null;
 
+    public float distanceRemaining = 0;
+    public float distanceTraveled = 0;
+    public float distanceTotalTraveled = 0;
+
+    public int stepsRemaining = 0;
+    public int stepsMade = 0;
+
     public GAPlayerDataDTO GetCurrentPlayerData()
     {
         GAMissionsControl.Api.onUpdatePlayerData?.Invoke();
@@ -32,12 +39,15 @@ public class GAMissionsModel
             (
             lifePoints: 0,
             unlockedMissionsCount: unlockedMissionsCount,
-            availableMissions: new List<bool>() { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
             painDiaryRecords: cachedDiaryRecords,
             missionUnlocking: missionUnlockingType,
             minimumDistanceRequired: minimumDistanceToTravel,
             minimumStepsRequired: minimumStepsRequired,
-            settingsPassword: GAConstants.DEFAULT_PASSWORD
+            settingsPassword: GAConstants.DEFAULT_PASSWORD,
+            distanceRemaining: distanceRemaining,
+            distanceTraveled: distanceTraveled,
+            distanceTotalTraveled: distanceTotalTraveled,
+            stepsMade: stepsMade
             );
 
         return playerData;

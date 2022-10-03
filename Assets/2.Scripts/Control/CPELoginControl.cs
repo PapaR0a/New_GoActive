@@ -75,9 +75,6 @@ public class CPELoginControl
 
     public void Login(string username, string password)
     {
-        InitializeGA();
-        return;
-
         CoroutineHelper.Call(CPEAPIService.Api.LoginAsync(username, password, (result) =>
             {
                 // load playground

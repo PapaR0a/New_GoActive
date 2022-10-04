@@ -77,45 +77,45 @@ public class CPELoginControl
     {
         CoroutineHelper.Call(CPEAPIService.Api.LoginAsync(username, password, (result) =>
             {
-                // load playground
-                CoroutineHelper.Call(CPEAPIService.Api.GetPlaygroundInfoByAppAsync("com.taggle.goactive", (pgResult) =>
+                if (result.Success)
                 {
-                    if (pgResult.Success)
+                    // load playground
+                    CoroutineHelper.Call(CPEAPIService.Api.GetPlaygroundInfoByAppAsync("com.taggle.goactive", (pgResult) =>
                     {
-                        Debug.Log($"<color=yellow>LOGIN SUCCESS: {JsonConvert.SerializeObject(pgResult.Data)} </color>");
+                        if (pgResult.Success)
+                        {
+                            Debug.Log($"<color=yellow>LOGIN SUCCESS: {JsonConvert.SerializeObject(pgResult.Data)} </color>");
 
-                        CPEModel.Api.GameID = pgResult.Data.Game.ID;
-                        CPEModel.Api.AppID = pgResult.Data.Game.AppId;
-                        CPEModel.Api.GameUserID = pgResult.Data.GameUser.ID;
+                            CPEModel.Api.GameID = pgResult.Data.Game.ID;
+                            CPEModel.Api.AppID = pgResult.Data.Game.AppId;
+                            CPEModel.Api.GameUserID = pgResult.Data.GameUser.ID;
 
-                        JObject ja = JsonConvert.DeserializeObject<JObject>(pgResult.Data.AppDataSummary.ToString());
-                        JObject data = ja.Value<JObject>("ga_player_data");
+                            JObject ja = JsonConvert.DeserializeObject<JObject>(pgResult.Data.AppDataSummary.ToString());
+                            JObject data = ja.Value<JObject>("ga_player_data");
 
-                        GAMissionsModel.Api.stepsMade = data.Value<int>("stepsMade");
-                        GAMissionsModel.Api.lifePoints = data.Value<int>("lifePoints");
-                        GAMissionsModel.Api.patientStory = data.Value<string>("patientStory");
-                        GAMissionsModel.Api.distanceTraveled = data.Value<float>("distanceTraveled");
-                        GAMissionsModel.Api.missionUnlocking = data.Value<int>("missionUnlocking");
-                        //GAMissionsModel.Api.cachedDiaryRecords = data.Value<int>("stepsMade");
-                        //GAMissionsModel.Api = data.Value<int>("stepsMade");
-                        GAMissionsModel.Api.distanceRemaining = data.Value<float>("distanceRemaining");
-                        GAMissionsModel.Api.minimumStepsRequired = data.Value<int>("minimumStepsRequired");
-                        GAMissionsModel.Api.distanceTotalTraveled = data.Value<float>("distanceTotalTraveled");
-                        GAMissionsModel.Api.unlockedMissionsCount = data.Value<int>("unlockedMissionsCount");
-                        GAMissionsModel.Api.minimumDistanceToTravel = data.Value<int>("minimumDistanceRequired");
+                            GAMissionsModel.Api.stepsMade = data.Value<int>("stepsMade");
+                            GAMissionsModel.Api.lifePoints = data.Value<int>("lifePoints");
+                            GAMissionsModel.Api.patientStory = data.Value<string>("patientStory");
+                            GAMissionsModel.Api.distanceTraveled = data.Value<float>("distanceTraveled");
+                            GAMissionsModel.Api.missionUnlocking = data.Value<int>("missionUnlocking");
+                            //GAMissionsModel.Api.cachedDiaryRecords = data.Value<int>("stepsMade");
+                            //GAMissionsModel.Api = data.Value<int>("stepsMade");
+                            GAMissionsModel.Api.distanceRemaining = data.Value<float>("distanceRemaining");
+                            GAMissionsModel.Api.minimumStepsRequired = data.Value<int>("minimumStepsRequired");
+                            GAMissionsModel.Api.distanceTotalTraveled = data.Value<float>("distanceTotalTraveled");
+                            GAMissionsModel.Api.unlockedMissionsCount = data.Value<int>("unlockedMissionsCount");
+                            GAMissionsModel.Api.minimumDistanceToTravel = data.Value<int>("minimumDistanceRequired");
 
-                        StartSession(null);
+                            StartSession(null);
 
-                        InitializeGA();
-                    }
-                    else
-                    {
-                        Debug.Log("LoginAsync - Login Error");
-                    }
-                }, 5));
-
-                // load prescription today
-                //GetPrescriptionToday();
+                            InitializeGA();
+                        }
+                        else
+                        {
+                            Debug.Log("LoginAsync - Login Error");
+                        }
+                    }, 5));
+                }
             }));
     }
 

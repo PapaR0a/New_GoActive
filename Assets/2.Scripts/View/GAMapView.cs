@@ -1,3 +1,4 @@
+using HutongGames.PlayMaker;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -47,6 +48,7 @@ public class GAMapView : MonoBehaviour
     {
         BindListeners();
 
+        FsmVariables.GlobalVariables.GetFsmInt("GA_Lifepoints").Value = GAMissionsModel.Api.lifePoints;
         GAMapModel.Api.totalDistanceTraveled = GAMissionsModel.Api.distanceTotalTraveled;
 
         GAMissionsControl.Api.onUpdatePlayerData += UpdatePlayerData;

@@ -1,3 +1,4 @@
+using HutongGames.PlayMaker;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,7 +49,7 @@ public class GAMissionsModel
 
         playerData = new GAPlayerDataDTO
             (
-            lifePoints: lifePoints,
+            lifePoints: FsmVariables.GlobalVariables.GetFsmInt("GA_Lifepoints").Value,
             unlockedMissionsCount: unlockedMissionsCount,
             painDiaryRecords: cachedDiaryRecords,
             missionUnlocking: missionUnlocking,

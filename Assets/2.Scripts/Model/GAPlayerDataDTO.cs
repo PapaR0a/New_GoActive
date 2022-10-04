@@ -19,7 +19,9 @@ public class GAPlayerDataDTO
 
     public int stepsMade;
 
-    public GAPlayerDataDTO(int lifePoints = 0, int unlockedMissionsCount = 0, List<List<GAPainRecordDTO>> painDiaryRecords = null, int missionUnlocking = 0, float minimumDistanceRequired = 1000, int minimumStepsRequired = 1000, string settingsPassword = "goactive123", float distanceRemaining = 0, float distanceTraveled = 0, float distanceTotalTraveled = 0, int stepsMade = 0)
+    public string patientStory;
+
+    public GAPlayerDataDTO(int lifePoints = 0, int unlockedMissionsCount = 0, List<List<GAPainRecordDTO>> painDiaryRecords = null, int missionUnlocking = 0, float minimumDistanceRequired = 1000, int minimumStepsRequired = 1000, string settingsPassword = "goactive123", float distanceRemaining = 0, float distanceTraveled = 0, float distanceTotalTraveled = 0, int stepsMade = 0, string patientStory = "")
     {
         this.lifePoints = lifePoints;
         this.unlockedMissionsCount = unlockedMissionsCount;
@@ -35,6 +37,7 @@ public class GAPlayerDataDTO
         this.distanceTotalTraveled = RoundFloatValue(distanceTotalTraveled);
 
         this.stepsMade = stepsMade;
+        this.patientStory = patientStory;
     }
 
     private float RoundFloatValue(float value)

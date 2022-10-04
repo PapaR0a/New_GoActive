@@ -38,7 +38,11 @@ public class GAMissionsControl
 
         if (missionNumber <= 0 || missionNumber >= currentMission)
         {
-            GAMissionsModel.Api.unlockedMissionsCount++;
+            GAMissionsModel.Api.unlockedMissionsCount = 36;
+
+            if (GAMissionsModel.Api.unlockedMissionsCount < 36)
+                GAMissionsModel.Api.unlockedMissionsCount++;
+
             PlayerPrefs.SetInt(GAConstants.KEY_MISSIONS_UNLOCKED, GAMissionsModel.Api.unlockedMissionsCount);
             Debug.Log($"<color=yellow> New mission unlocked successfully!</color>");
 

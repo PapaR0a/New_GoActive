@@ -88,6 +88,22 @@ public class CPELoginControl
                         CPEModel.Api.AppID = pgResult.Data.Game.AppId;
                         CPEModel.Api.GameUserID = pgResult.Data.GameUser.ID;
 
+                        JObject ja = JsonConvert.DeserializeObject<JObject>(pgResult.Data.AppDataSummary.ToString());
+                        JObject data = ja.Value<JObject>("ga_player_data");
+
+                        GAMissionsModel.Api.stepsMade = data.Value<int>("stepsMade");
+                        GAMissionsModel.Api.lifePoints = data.Value<int>("lifePoints");
+                        GAMissionsModel.Api.patientStory = data.Value<string>("patientStory");
+                        GAMissionsModel.Api.distanceTraveled = data.Value<float>("distanceTraveled");
+                        GAMissionsModel.Api.missionUnlocking = data.Value<int>("missionUnlocking");
+                        //GAMissionsModel.Api.cachedDiaryRecords = data.Value<int>("stepsMade");
+                        //GAMissionsModel.Api = data.Value<int>("stepsMade");
+                        GAMissionsModel.Api.distanceRemaining = data.Value<float>("distanceRemaining");
+                        GAMissionsModel.Api.minimumStepsRequired = data.Value<int>("minimumStepsRequired");
+                        GAMissionsModel.Api.distanceTotalTraveled = data.Value<float>("distanceTotalTraveled");
+                        GAMissionsModel.Api.unlockedMissionsCount = data.Value<int>("unlockedMissionsCount");
+                        GAMissionsModel.Api.minimumDistanceToTravel = data.Value<int>("minimumDistanceRequired");
+
                         StartSession(null);
 
                         InitializeGA();

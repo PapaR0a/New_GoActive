@@ -21,7 +21,7 @@ public class GASettingsView : MonoBehaviour
     /// <param name="unlockingType"></param>
     public void OnChangeUnlockingMissions(int unlockingType)
     {
-        GAMissionsModel.Api.missionUnlockingType = unlockingType;
+        GAMissionsModel.Api.missionUnlocking = unlockingType;
     }
 
     public void OnApplyChanges()
@@ -53,7 +53,7 @@ public class GASettingsView : MonoBehaviour
 
         /// save unlocking type
         {
-            PlayerPrefs.SetInt(GAConstants.KEY_UNLOCKING_TYPE, GAMissionsModel.Api.missionUnlockingType);
+            PlayerPrefs.SetInt(GAConstants.KEY_UNLOCKING_TYPE, GAMissionsModel.Api.missionUnlocking);
         }
 
         GAMissionsControl.Api.SubmitUserData();

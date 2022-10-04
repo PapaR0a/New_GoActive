@@ -47,6 +47,8 @@ public class GAMapView : MonoBehaviour
     {
         BindListeners();
 
+        GAMapModel.Api.totalDistanceTraveled = GAMissionsModel.Api.distanceTotalTraveled;
+
         GAMissionsControl.Api.onUpdatePlayerData += UpdatePlayerData;
     }
 

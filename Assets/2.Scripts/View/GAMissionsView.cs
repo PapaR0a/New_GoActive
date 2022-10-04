@@ -52,12 +52,10 @@ public class GAMissionsView : MonoBehaviour
 
     private void OnUnlockNewMission()
     {
-        if (GAMissionsModel.Api.unlockedMissionsCount >= m_missionBtns.Count)
-            return;
-
         for (int i = 0; i < GAMissionsModel.Api.unlockedMissionsCount; i++)
         {
-            m_missionBtns[i].interactable = true;
+            if (i < m_missionBtns.Count)
+                m_missionBtns[i].interactable = true;
         }
     }
 

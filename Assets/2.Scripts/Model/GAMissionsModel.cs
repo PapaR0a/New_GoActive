@@ -16,7 +16,7 @@ public class GAMissionsModel
     }
 
     public int unlockedMissionsCount = PlayerPrefs.GetInt(GAConstants.KEY_MISSIONS_UNLOCKED, 0);
-    public int missionUnlockingType = PlayerPrefs.GetInt(GAConstants.KEY_UNLOCKING_TYPE, 0);
+    public int missionUnlocking = PlayerPrefs.GetInt(GAConstants.KEY_UNLOCKING_TYPE, 0);
     public float minimumDistanceToTravel = PlayerPrefs.GetInt(GAConstants.KEY_MINIMUM_DISTANCE, 1000);
     public int minimumStepsRequired = PlayerPrefs.GetInt(GAConstants.KEY_MINIMUM_STEPS, 1000);
 
@@ -24,12 +24,23 @@ public class GAMissionsModel
 
     private GAPlayerDataDTO playerData = null;
 
+    public int lifePoints = 0;
+
     public float distanceRemaining = 0;
     public float distanceTraveled = 0;
     public float distanceTotalTraveled = 0;
 
+    public string settingPassword = "";
+
     public int stepsRemaining = 0;
     public int stepsMade = 0;
+
+    public string patientStory = "";
+
+    public void UpdatePlayerData(GAPlayerDataDTO data)
+    {
+
+    }
 
     public GAPlayerDataDTO GetCurrentPlayerData()
     {
@@ -37,17 +48,18 @@ public class GAMissionsModel
 
         playerData = new GAPlayerDataDTO
             (
-            lifePoints: 0,
+            lifePoints: lifePoints,
             unlockedMissionsCount: unlockedMissionsCount,
             painDiaryRecords: cachedDiaryRecords,
-            missionUnlocking: missionUnlockingType,
+            missionUnlocking: missionUnlocking,
             minimumDistanceRequired: minimumDistanceToTravel,
             minimumStepsRequired: minimumStepsRequired,
-            settingsPassword: GAConstants.DEFAULT_PASSWORD,
+            settingsPassword: settingPassword,
             distanceRemaining: distanceRemaining,
             distanceTraveled: distanceTraveled,
             distanceTotalTraveled: distanceTotalTraveled,
-            stepsMade: stepsMade
+            stepsMade: stepsMade,
+            patientStory: patientStory
             );
 
         return playerData;

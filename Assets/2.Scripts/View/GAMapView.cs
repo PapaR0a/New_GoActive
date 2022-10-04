@@ -70,7 +70,7 @@ public class GAMapView : MonoBehaviour
         m_cancelButton.onClick.AddListener(GAMapControl.Api.ShowCancelWalk);
         m_demoButton.onClick.AddListener(GAMapControl.Api.ToggleAutoPilot);
 
-        GAMissionsControl.Api.onToggleMission += (x) => { StartCoroutine(onLoadMission(x)); };
+        //GAMissionsControl.Api.onToggleMission += (x) => { StartCoroutine(onLoadMission(x)); };
         GAMapControl.Api.onChooseGameType += () => { StartCoroutine(OnShowNextPopup()); };
         GAMapControl.Api.onStartWalking += OnStartWalking;
         GAMapControl.Api.onToggleAnimation += OnToggleAnimation;
@@ -93,7 +93,7 @@ public class GAMapView : MonoBehaviour
         m_cancelButton.onClick.RemoveAllListeners();
         m_demoButton.onClick.RemoveAllListeners();
 
-        GAMissionsControl.Api.onToggleMission -= (x) => { StartCoroutine( onLoadMission(x) ); };
+        //GAMissionsControl.Api.onToggleMission -= (x) => { StartCoroutine( onLoadMission(x) ); };
         GAMapControl.Api.onChooseGameType -= () => { StartCoroutine(OnShowNextPopup()); };
         GAMapControl.Api.onStartWalking -= OnStartWalking;
         GAMapControl.Api.onToggleAnimation -= OnToggleAnimation;

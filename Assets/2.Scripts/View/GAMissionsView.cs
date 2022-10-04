@@ -25,10 +25,10 @@ public class GAMissionsView : MonoBehaviour
             btn.interactable = false;
         }
 
-        foreach (var btn in m_missionBtns)
-        {
-            btn.onClick.AddListener(() => GAMissionsControl.Api.SelectMission(btn.name));
-        }
+        //foreach (var btn in m_missionBtns)
+        //{
+            //btn.onClick.AddListener(() => GAMissionsControl.Api.SelectMission(btn.name));
+        //}
 
         GAMissionsControl.Api.RefreshMissions();
     }
@@ -39,10 +39,10 @@ public class GAMissionsView : MonoBehaviour
         GAMissionsControl.Api.onChangeMap -= OnChangeMap;
         GAMissionsControl.Api.onToggleMainCamera -= ToggleMainCamera;
 
-        foreach (var btn in m_missionBtns)
-        {
-            btn.onClick.RemoveAllListeners();
-        }
+        //foreach (var btn in m_missionBtns)
+        //{
+        //    btn.onClick.RemoveAllListeners();
+        //}
     }
 
     private void ToggleMainCamera(bool val)

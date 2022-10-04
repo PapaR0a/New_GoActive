@@ -10,6 +10,10 @@ TagManager:
   - Correct
   - Map
   - Clone
+  - Apple
+  - Mango
+  - Orange
+  - Strawberry
   layers:
   - Default
   - TransparentFX
@@ -23,7 +27,7 @@ TagManager:
   - Ground
   - Postprocessing
   - Game
-  - 
+  - Map
   - 
   - 
   - 

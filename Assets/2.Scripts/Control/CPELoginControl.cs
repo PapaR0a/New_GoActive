@@ -80,7 +80,7 @@ public class CPELoginControl
                 if (result.Success)
                 {
                     // load playground
-                    CoroutineHelper.Call(CPEAPIService.Api.GetPlaygroundInfoByAppAsync("com.taggle.goactive", (pgResult) =>
+                    CoroutineHelper.Call(CPEAPIService.Api.GetPlaygroundInfoByAppAsync("com.taggle.goactiveme", (pgResult) =>
                     {
                         if (pgResult.Success)
                         {

@@ -95,7 +95,7 @@ public class CPELoginControl
                             {
                                 if (rs.Success)
                                 {
-                                    if (rs.Data != null || rs.Data.Count > 0)
+                                    if (rs.Data != null && rs.Data.Count > 0)
                                     {
                                         JObject data = (JObject)rs.Data[0].Data;
                                         //JObject data = ja.Value<JObject>(CPEServiceKey.PARAM_SCHEMA_APP_DATA);

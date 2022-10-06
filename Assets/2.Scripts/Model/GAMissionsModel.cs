@@ -16,8 +16,8 @@ public class GAMissionsModel
         }
     }
 
-    public int unlockedMissionsCount = PlayerPrefs.GetInt(GAConstants.KEY_MISSIONS_UNLOCKED, 0);
-    public int missionUnlocking = PlayerPrefs.GetInt(GAConstants.KEY_UNLOCKING_TYPE, 0);
+    public int unlockedMissionsCount = 0;
+    public int missionUnlocking = 0;
     public float minimumDistanceToTravel = PlayerPrefs.GetInt(GAConstants.KEY_MINIMUM_DISTANCE, 1000);
     public int minimumStepsRequired = PlayerPrefs.GetInt(GAConstants.KEY_MINIMUM_STEPS, 1000);
 

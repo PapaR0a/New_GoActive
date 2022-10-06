@@ -38,8 +38,6 @@ public class GAMissionsControl
 
         if (missionNumber <= 0 || missionNumber >= currentMission)
         {
-            GAMissionsModel.Api.unlockedMissionsCount = 36;
-
             if (GAMissionsModel.Api.unlockedMissionsCount < 36)
                 GAMissionsModel.Api.unlockedMissionsCount++;
 

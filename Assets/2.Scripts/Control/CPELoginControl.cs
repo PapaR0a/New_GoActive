@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TaggleTemplate.Comm;
 using TaggleTemplate.Core;
 using UnityEngine;
 using UnityEngine.Events;
@@ -90,28 +91,34 @@ public class CPELoginControl
                             CPEModel.Api.AppID = pgResult.Data.Game.AppId;
                             CPEModel.Api.GameUserID = pgResult.Data.GameUser.ID;
 
-                            if (pgResult.Data.AppDataSummary != null)
+                            CoroutineHelper.Call(CPEAPIService.Api.GetAppData((rs) =>
                             {
-                                JObject ja = JsonConvert.DeserializeObject<JObject>(pgResult.Data.AppDataSummary.ToString());
-                                JObject data = ja.Value<JObject>("ga_player_data");
+                                if (rs.Success)
+                                {
+                                    if (rs.Data != null || rs.Data.Count > 0)
+                                    {
+                                        JObject data = (JObject)rs.Data[0].Data;
+                                        //JObject data = ja.Value<JObject>(CPEServiceKey.PARAM_SCHEMA_APP_DATA);
 
-                                GAMissionsModel.Api.stepsMade = data.Value<int>("stepsMade");
-                                GAMissionsModel.Api.lifePoints = data.Value<int>("lifePoints");
-                                GAMissionsModel.Api.patientStory = data.Value<string>("patientStory");
-                                GAMissionsModel.Api.distanceTraveled = data.Value<float>("distanceTraveled");
-                                GAMissionsModel.Api.missionUnlocking = data.Value<int>("missionUnlocking");
-                                //GAMissionsModel.Api.cachedDiaryRecords = data.Value<int>("stepsMade");
-                                //GAMissionsModel.Api = data.Value<int>("stepsMade");
-                                GAMissionsModel.Api.distanceRemaining = data.Value<float>("distanceRemaining");
-                                GAMissionsModel.Api.minimumStepsRequired = data.Value<int>("minimumStepsRequired");
-                                GAMissionsModel.Api.distanceTotalTraveled = data.Value<float>("distanceTotalTraveled");
-                                GAMissionsModel.Api.unlockedMissionsCount = data.Value<int>("unlockedMissionsCount");
-                                GAMissionsModel.Api.minimumDistanceToTravel = data.Value<int>("minimumDistanceRequired");
-                            }
+                                        GAMissionsModel.Api.stepsMade = data.Value<int>("stepsMade");
+                                        GAMissionsModel.Api.lifePoints = data.Value<int>("lifePoints");
+                                        GAMissionsModel.Api.patientStory = data.Value<string>("patientStory");
+                                        GAMissionsModel.Api.distanceTraveled = data.Value<float>("distanceTraveled");
+                                        GAMissionsModel.Api.missionUnlocking = data.Value<int>("missionUnlocking");
+                                        //GAMissionsModel.Api.cachedDiaryRecords = data.Value<int>("stepsMade");
+                                        //GAMissionsModel.Api = data.Value<int>("stepsMade");
+                                        GAMissionsModel.Api.distanceRemaining = data.Value<float>("distanceRemaining");
+                                        GAMissionsModel.Api.minimumStepsRequired = data.Value<int>("minimumStepsRequired");
+                                        GAMissionsModel.Api.distanceTotalTraveled = data.Value<float>("distanceTotalTraveled");
+                                        GAMissionsModel.Api.unlockedMissionsCount = data.Value<int>("unlockedMissionsCount");
+                                        GAMissionsModel.Api.minimumDistanceToTravel = data.Value<int>("minimumDistanceRequired");
+                                    }
+                                }
 
-                            StartSession(null);
+                                StartSession(null);
 
-                            InitializeGA();
+                                InitializeGA();
+                            }, CPEServiceKey.PARAM_SCHEMA_APP_DATA));
                         }
                         else
                         {
@@ -143,9 +150,6 @@ public class CPELoginControl
             }
             onCallback?.Invoke(result.Success && result.Data != null && result.Data.Count > 0);
         }, CPEServiceKey.PARAM_SCHEMA_APP_DATA, CPEModel.Api.AppID));
-
-
-
     }
 
     public void SubmitAppData(JToken data)

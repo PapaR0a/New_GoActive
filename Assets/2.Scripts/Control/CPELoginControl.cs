@@ -105,8 +105,7 @@ public class CPELoginControl
                                         GAMissionsModel.Api.patientStory = data.Value<string>("patientStory");
                                         GAMissionsModel.Api.distanceTraveled = data.Value<float>("distanceTraveled");
                                         GAMissionsModel.Api.missionUnlocking = data.Value<int>("missionUnlocking");
-                                        //GAMissionsModel.Api.cachedDiaryRecords = data.Value<int>("stepsMade");
-                                        //GAMissionsModel.Api = data.Value<int>("stepsMade");
+                                        GAMissionsModel.Api.stepsMade = data.Value<int>("stepsMade");
                                         GAMissionsModel.Api.distanceRemaining = data.Value<float>("distanceRemaining");
                                         GAMissionsModel.Api.minimumStepsRequired = data.Value<int>("minimumStepsRequired");
                                         GAMissionsModel.Api.distanceTotalTraveled = data.Value<float>("distanceTotalTraveled");
@@ -158,14 +157,16 @@ public class CPELoginControl
         }, CPEServiceKey.PARAM_SCHEMA_APP_DATA, CPEModel.Api.AppID));
     }
 
-    public void SubmitAppData(JToken data)
+    public void SubmitAppData(JToken data, string schemaName = "", bool forceCreate = false)
     {
-        CoroutineHelper.Call(CPEAPIService.Api.CreateOrUpdateAppData(CPEServiceKey.PARAM_SCHEMA_APP_DATA, data, (result) =>
+        schemaName = string.IsNullOrEmpty(schemaName) ? CPEServiceKey.PARAM_SCHEMA_APP_DATA : schemaName;
+
+        CoroutineHelper.Call(CPEAPIService.Api.CreateOrUpdateAppData(schemaName, data, (result) =>
         {
             if (result.Success)
             {
                 Debug.Log("<color=yellow> Submit Player Data Success </color>");
             }
-        }, null, null, false, CPEModel.Api.AppID));
+        }, null, null, forceCreate, CPEModel.Api.AppID));
     }
 }

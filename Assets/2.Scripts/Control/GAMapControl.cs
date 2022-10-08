@@ -421,10 +421,14 @@ public class GAMapControl
             destinations.Add($"long: {lng1} Lat: {lat1}");
         }
 
-        string currentDestination;
+        string currentDestination = "";
         double lng2, lat2;
-        GAMapModel.Api.currentGoalMarker.GetPosition(out lng2, out lat2);
-        currentDestination = $"long: {lng2} Lat: {lat2}";
+
+        if (GAMapModel.Api.currentGoalMarker != null)
+        {
+            GAMapModel.Api.currentGoalMarker.GetPosition(out lng2, out lat2);
+            currentDestination = $"long: {lng2} Lat: {lat2}";
+        }
 
         GAMapWalkDTO mapData = new GAMapWalkDTO
             (

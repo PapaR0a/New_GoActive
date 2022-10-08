@@ -49,18 +49,18 @@ public class GAMissionsModel
 
         playerData = new GAPlayerDataDTO
             (
-            lifePoints: FsmVariables.GlobalVariables.GetFsmInt("GA_Lifepoints").Value,
-            unlockedMissionsCount: unlockedMissionsCount,
-            painDiaryRecords: cachedDiaryRecords,
-            missionUnlocking: missionUnlocking,
-            minimumDistanceRequired: minimumDistanceToTravel,
-            minimumStepsRequired: minimumStepsRequired,
-            settingsPassword: settingPassword,
-            distanceRemaining: distanceRemaining,
-            distanceTraveled: distanceTraveled,
-            distanceTotalTraveled: distanceTotalTraveled,
-            stepsMade: stepsMade,
-            patientStory: patientStory
+                lifePoints: FsmVariables.GlobalVariables.GetFsmInt("GA_Lifepoints").Value,
+                unlockedMissionsCount: unlockedMissionsCount,
+                painDiaryRecords: cachedDiaryRecords,
+                missionUnlocking: missionUnlocking,
+                minimumDistanceRequired: minimumDistanceToTravel,
+                minimumStepsRequired: minimumStepsRequired,
+                settingsPassword: settingPassword,
+                distanceRemaining: distanceRemaining,
+                distanceTraveled: distanceTraveled,
+                distanceTotalTraveled: distanceTotalTraveled,
+                stepsMade: stepsMade,
+                patientStory: patientStory
             );
 
         return playerData;

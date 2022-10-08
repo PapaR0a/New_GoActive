@@ -29,7 +29,7 @@ public class GALoginView : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            CPELoginControl.Api.Login("goactive14", "Aa123123!@#G14");
+            CPELoginControl.Api.Login("tester", "Aa123123!@#456");
         }
     }
 

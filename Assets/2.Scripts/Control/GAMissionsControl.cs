@@ -61,11 +61,20 @@ public class GAMissionsControl
         onChangeMap?.Invoke(val);
     }
 
+    // Updates data
     public void SubmitUserData()
     {
         GAPlayerDataDTO playerData = GAMissionsModel.Api.GetCurrentPlayerData();
         CPELoginControl.Api.SubmitAppData((JObject)JToken.FromObject(playerData));
 
         Debug.Log($"<color=yellow> PlayerData: {JsonConvert.SerializeObject(playerData)} </color>");
+    }
+
+    // Unique per sending
+    public void SubmitRecordData(JObject data, string schemaName = "")
+    {
+        CPELoginControl.Api.SubmitAppData(data, schemaName, true);
+
+        Debug.Log($"<color=yellow> Record Data: {JsonConvert.SerializeObject(data)} </color>");
     }
 }

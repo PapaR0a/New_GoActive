@@ -2094,7 +2094,6 @@ GameObject:
   - component: {fileID: 277658386}
   - component: {fileID: 277658389}
   - component: {fileID: 277658388}
-  - component: {fileID: 277658387}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2149,19 +2148,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &277658387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 277658384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36723bf6835a1ff4f814fc44f81c7f3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missionNumber: 4
 --- !u!114 &277658388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38832,6 +38818,7 @@ GameObject:
   - component: {fileID: 1371191374}
   - component: {fileID: 1371191373}
   - component: {fileID: 1371191372}
+  - component: {fileID: 1371191375}
   m_Layer: 5
   m_Name: m1d4_save
   m_TagString: Untagged
@@ -39564,6 +39551,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371191370}
   m_CullTransparentMesh: 1
+--- !u!114 &1371191375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371191370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36723bf6835a1ff4f814fc44f81c7f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionNumber: 4
 --- !u!1 &1404385344
 GameObject:
   m_ObjectHideFlags: 0

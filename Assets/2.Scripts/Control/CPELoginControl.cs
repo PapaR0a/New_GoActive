@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using HutongGames.PlayMaker;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
@@ -151,6 +152,12 @@ public class CPELoginControl
                                 }
 
                                 Debug.Log($"<color=yellow> Updated status data: {JsonConvert.SerializeObject(GAMissionsModel.Api.GetMissionStatuses())} </color>");
+
+                                //foreach(var key in GAMissionsModel.Api.missionsStatuses.Keys)
+                                //{
+                                //    string[] keys = FsmVariables.GlobalVariables.setfm($"{gameObject.name.Replace("_save", "_key")}").stringValues;
+                                //    bool[] values = FsmVariables.GlobalVariables.GetFsmArray($"{gameObject.name.Replace("_save", "_value")}").boolValues;
+                                //}
 
                                 StartSession(null);
 

@@ -38,6 +38,37 @@ public class GAMissionsModel
 
     public string patientStory = "";
 
+    public Dictionary<string, List<MissionData>> missionsStatuses = null;
+
+    public void UpdateMissionStatuses(string key, List<MissionData> updatedData)
+    {
+        missionsStatuses[key] = updatedData;
+    }
+
+    public Dictionary<string, List<MissionData>> GetMissionStatuses()
+    {
+        if (missionsStatuses == null)
+        {
+            missionsStatuses = new Dictionary<string, List<MissionData>>()
+            {
+                {"m1d1_save", null },
+                {"m1d2_save", null },
+                {"m1d3_save", null },
+                {"m1d4_save", null },
+                {"m1d5_save", null },
+                {"m1d6_save", null },
+                {"m2d1_save", null },
+                {"m2d2_save", null },
+                {"m2d3_save", null },
+                {"m2d4_save", null },
+                {"m2d5_save", null },
+                {"m2d6_save", null }
+            };
+        }
+
+        return missionsStatuses;
+    }
+
     public void UpdatePlayerData(GAPlayerDataDTO data)
     {
 

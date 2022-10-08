@@ -28,6 +28,7 @@ public class GAConstants
 
     public const string SCHEMA_MAP_WALK = "ga_map_walk";
     public const string SCHEMA_MISSION_DATA = "ga_mission_data";
+    public const string SCHEMA_MISSION_STATUS = "ga_mission_status";
 
     public const float MARKER_DISTANCE_THRESHOLD = 0.005f; // Minimum distance to "get" a point on the map
     public const float MAX_TRAVEL_SPEED = 250f;

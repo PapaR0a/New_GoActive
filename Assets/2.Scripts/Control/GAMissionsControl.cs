@@ -70,6 +70,13 @@ public class GAMissionsControl
         Debug.Log($"<color=yellow> PlayerData: {JsonConvert.SerializeObject(playerData)} </color>");
     }
 
+    public void SubmitMissionsStatusData()
+    {
+        CPELoginControl.Api.SubmitAppData((JObject)JToken.FromObject(GAMissionsModel.Api.missionsStatuses), GAConstants.SCHEMA_MISSION_STATUS);
+
+        Debug.Log($"<color=yellow> PlayerData: {JsonConvert.SerializeObject(GAMissionsModel.Api.missionsStatuses)} </color>");
+    }
+
     // Unique per sending
     public void SubmitRecordData(JObject data, string schemaName = "")
     {

@@ -59,4 +59,9 @@ public class BWConstant
     {
         get { return @"mm\:ss"; }
     }
+
+    public static string FIREBASE_FAKE_KEY // format timespan duration with total hours <= 0
+    {
+        get { return @"g0active-xxxx-yyyy-zzzz"; }
+    }
 }

@@ -76,12 +76,12 @@ public class CPELoginControl
 
     public void Login(string username, string password)
     {
-        CoroutineHelper.Call(CPEAPIService.Api.LoginAsync(username, password, (result) =>
-            {
-                if (result.Success)
+        CoroutineHelper.Call(CPEAPIService.Api.LoginMobileAsync(username, password, BWConstant.FIREBASE_FAKE_KEY, (result) =>
+        {
+            if (result.Success)
                 {
                     // load playground
-                    CoroutineHelper.Call(CPEAPIService.Api.GetPlaygroundInfoByAppAsync("com.taggle.goactive", (pgResult) =>
+                    CoroutineHelper.Call(CPEAPIService.Api.GetPlaygroundInfoByAppAsync(Application.identifier, (pgResult) =>
                     {
                         if (pgResult.Success)
                         {
@@ -122,11 +122,17 @@ public class CPELoginControl
                         }
                         else
                         {
-                            Debug.Log("LoginAsync - Login Error");
+                            Debug.LogWarning("Error getting playground... Login again?");
                         }
                     }, 5));
                 }
-            }));
+                else
+                {
+                    // TODO: Please show error, can use MainError as errorkey
+                    // Example: INVALID_CREDENTIALS -> Wrong username password
+                    Debug.Log("Error logging in with username password. MainError: " + result.MainError);
+                }
+        }));
     }
 
     public void InitializeGA()

@@ -70,11 +70,50 @@ public class GAMissionsControl
         Debug.Log($"<color=yellow> PlayerData: {JsonConvert.SerializeObject(playerData)} </color>");
     }
 
-    public void SubmitMissionsStatusData()
+    public void SubmitMissionsStatusData(string key, string[] keys, bool[] values)
     {
+        var statuses = GAMissionsModel.Api.GetMissionStatuses()[key];
+        for (int i = 0; i < keys.Length; i++)
+        {
+            if (i < keys.Length && i < values.Length)
+            {
+                var newData = new MissionData();
+                newData.key = keys[i];
+                newData.value = values[i];
+
+                bool hasAlreadyAnswered = false;
+                foreach(var oldData in statuses)
+                {
+                    if (oldData.key == newData.key)
+                    {
+                        hasAlreadyAnswered = true;
+                        break;
+                    }
+                }
+
+                if (!hasAlreadyAnswered)
+                {
+                    statuses.Add(newData);
+                }
+                else
+                {
+                    for (int a = 0; a < statuses.Count; a++)
+                    {
+                        if (statuses[a] == newData)
+                        {
+                            statuses[a] = newData;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        GAMissionsModel.Api.UpdateMissionStatuses(key, statuses);
+
         CPELoginControl.Api.SubmitAppData((JObject)JToken.FromObject(GAMissionsModel.Api.missionsStatuses), GAConstants.SCHEMA_MISSION_STATUS);
 
-        Debug.Log($"<color=yellow> PlayerData: {JsonConvert.SerializeObject(GAMissionsModel.Api.missionsStatuses)} </color>");
+        Debug.Log($"<color=yellow> Mission Status: {JsonConvert.SerializeObject(GAMissionsModel.Api.missionsStatuses)} </color>");
     }
 
     // Unique per sending

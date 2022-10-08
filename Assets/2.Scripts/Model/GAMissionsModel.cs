@@ -51,18 +51,18 @@ public class GAMissionsModel
         {
             missionsStatuses = new Dictionary<string, List<MissionData>>()
             {
-                {"m1d1_save", null },
-                {"m1d2_save", null },
-                {"m1d3_save", null },
-                {"m1d4_save", null },
-                {"m1d5_save", null },
-                {"m1d6_save", null },
-                {"m2d1_save", null },
-                {"m2d2_save", null },
-                {"m2d3_save", null },
-                {"m2d4_save", null },
-                {"m2d5_save", null },
-                {"m2d6_save", null }
+                {"m1d1_save", new List<MissionData>() },
+                {"m1d2_save", new List<MissionData>() },
+                {"m1d3_save", new List<MissionData>() },
+                {"m1d4_save", new List<MissionData>() },
+                {"m1d5_save", new List<MissionData>() },
+                {"m1d6_save", new List<MissionData>() },
+                {"m2d1_save", new List<MissionData>() },
+                {"m2d2_save", new List<MissionData>() },
+                {"m2d3_save", new List<MissionData>() },
+                {"m2d4_save", new List<MissionData>() },
+                {"m2d5_save", new List<MissionData>() },
+                {"m2d6_save", new List<MissionData>() }
             };
         }
 

@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TaggleTemplate.Comm;
+using TaggleTemplate.Comm.TaggleExtensions;
 using TaggleTemplate.Core;
 using UnityEngine;
 using UnityEngine.Events;
@@ -113,11 +114,48 @@ public class CPELoginControl
                                         GAMissionsModel.Api.minimumDistanceToTravel = data.Value<int>("minimumDistanceRequired");
                                     }
                                 }
+                            }, CPEServiceKey.PARAM_SCHEMA_APP_DATA));
+
+                            CoroutineHelper.Call(CPEAPIService.Api.GetAppData((rs) =>
+                            {
+                                if (rs.Success)
+                                {
+                                    var serverData = new Dictionary<string, List<MissionData>>();
+
+                                    if (rs.Data != null && rs.Data.Count > 0)
+                                    {
+                                        JObject data = (JObject)rs.Data[0].Data;
+                                        var oldData = GAMissionsModel.Api.GetMissionStatuses();
+
+                                        foreach (var key in oldData.Keys)
+                                        {
+                                            List<MissionData> missionDataList = new List<MissionData>();
+                                            string missionDataJson = data[key].ToString();
+                                            JArray ja = JsonConvert.DeserializeObject<JArray>(missionDataJson);
+
+                                            for (int i = 0; i < ja.Count; i++)
+                                            {
+                                                var missionData = new MissionData();
+
+                                                JObject joData = (JObject)ja[i];
+                                                missionData.key = joData.Value<string>("key");
+                                                missionData.value = joData.Value<bool>("value");
+
+                                                missionDataList.Add(missionData);
+                                            }
+                                            serverData.Add(key, missionDataList);
+                                        }
+
+                                        GAMissionsModel.Api.missionsStatuses = serverData;
+                                    }
+                                }
+
+                                Debug.Log($"<color=yellow> Updated status data: {JsonConvert.SerializeObject(GAMissionsModel.Api.GetMissionStatuses())} </color>");
 
                                 StartSession(null);
 
                                 InitializeGA();
-                            }, CPEServiceKey.PARAM_SCHEMA_APP_DATA));
+                            }, GAConstants.SCHEMA_MISSION_STATUS));
                         }
                         else
                         {
@@ -167,7 +205,7 @@ public class CPELoginControl
         {
             if (result.Success)
             {
-                Debug.Log("<color=yellow> Submit Player Data Success </color>");
+                Debug.Log("<color=yellow> Submit Data Success </color>");
             }
         }, null, null, forceCreate, CPEModel.Api.AppID));
     }

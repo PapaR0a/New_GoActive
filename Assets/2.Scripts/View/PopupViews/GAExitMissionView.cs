@@ -19,7 +19,7 @@ public class GAExitMissionView : MonoBehaviour
     private void Start()
     {
         startDate = DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
-
+        //playMaker = GetComponent<PlayMakerFSM>() ?? null;
         missionDataText = GetComponent<Text>() ?? null;
 
         Debug.Log($"<color=yellow>Current unlocking type: {GAMissionsModel.Api.missionUnlocking} </color>");
@@ -36,6 +36,12 @@ public class GAExitMissionView : MonoBehaviour
     {
         endDate = DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
         SubmitData("Exit Mission");
+
+        string[] keys = FsmVariables.GlobalVariables.GetFsmArray($"{gameObject.name.Replace("_save", "_key")}").stringValues;
+        bool[] values = FsmVariables.GlobalVariables.GetFsmArray($"{gameObject.name.Replace("_save", "_value")}").boolValues;
+
+        GAMissionsControl.Api.SubmitMissionsStatusData(gameObject.name, keys, values);
+
         GAMissionsControl.Api.SubmitUserData();
 
         GAMissionsControl.Api.onToggleMainCamera?.Invoke(true);
@@ -50,11 +56,11 @@ public class GAExitMissionView : MonoBehaviour
 
         GAMissionDTO missionData = new GAMissionDTO
             (
-            activityName: activityName,
-            missionName: gameObject.name.Replace("_save", ""),
-            dateStarted: startDate,
-            dateEnded: endDate,
-            activities: missionDataText.text
+                activityName: activityName,
+                missionName: gameObject.name.Replace("_save", ""),
+                dateStarted: startDate,
+                dateEnded: endDate,
+                activities: missionDataText.text
             );
 
         GAMissionsControl.Api.SubmitRecordData((JObject)JToken.FromObject(missionData), GAConstants.SCHEMA_MISSION_DATA);

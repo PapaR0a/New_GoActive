@@ -76,12 +76,12 @@ public class CPELoginControl
 
     public void Login(string username, string password)
     {
-        CoroutineHelper.Call(CPEAPIService.Api.LoginAsync(username, password, (result) =>
-            {
-                if (result.Success)
+        CoroutineHelper.Call(CPEAPIService.Api.LoginMobileAsync(username, password, BWConstant.FIREBASE_FAKE_KEY, (result) =>
+        {
+            if (result.Success)
                 {
                     // load playground
-                    CoroutineHelper.Call(CPEAPIService.Api.GetPlaygroundInfoByAppAsync("com.taggle.goactive", (pgResult) =>
+                    CoroutineHelper.Call(CPEAPIService.Api.GetPlaygroundInfoByAppAsync(Application.identifier, (pgResult) =>
                     {
                         if (pgResult.Success)
                         {
@@ -105,8 +105,7 @@ public class CPELoginControl
                                         GAMissionsModel.Api.patientStory = data.Value<string>("patientStory");
                                         GAMissionsModel.Api.distanceTraveled = data.Value<float>("distanceTraveled");
                                         GAMissionsModel.Api.missionUnlocking = data.Value<int>("missionUnlocking");
-                                        //GAMissionsModel.Api.cachedDiaryRecords = data.Value<int>("stepsMade");
-                                        //GAMissionsModel.Api = data.Value<int>("stepsMade");
+                                        GAMissionsModel.Api.stepsMade = data.Value<int>("stepsMade");
                                         GAMissionsModel.Api.distanceRemaining = data.Value<float>("distanceRemaining");
                                         GAMissionsModel.Api.minimumStepsRequired = data.Value<int>("minimumStepsRequired");
                                         GAMissionsModel.Api.distanceTotalTraveled = data.Value<float>("distanceTotalTraveled");
@@ -122,11 +121,17 @@ public class CPELoginControl
                         }
                         else
                         {
-                            Debug.Log("LoginAsync - Login Error");
+                            Debug.LogWarning("Error getting playground... Login again?");
                         }
                     }, 5));
                 }
-            }));
+                else
+                {
+                    // TODO: Please show error, can use MainError as errorkey
+                    // Example: INVALID_CREDENTIALS -> Wrong username password
+                    Debug.Log("Error logging in with username password. MainError: " + result.MainError);
+                }
+        }));
     }
 
     public void InitializeGA()
@@ -152,14 +157,16 @@ public class CPELoginControl
         }, CPEServiceKey.PARAM_SCHEMA_APP_DATA, CPEModel.Api.AppID));
     }
 
-    public void SubmitAppData(JToken data)
+    public void SubmitAppData(JToken data, string schemaName = "", bool forceCreate = false)
     {
-        CoroutineHelper.Call(CPEAPIService.Api.CreateOrUpdateAppData(CPEServiceKey.PARAM_SCHEMA_APP_DATA, data, (result) =>
+        schemaName = string.IsNullOrEmpty(schemaName) ? CPEServiceKey.PARAM_SCHEMA_APP_DATA : schemaName;
+
+        CoroutineHelper.Call(CPEAPIService.Api.CreateOrUpdateAppData(schemaName, data, (result) =>
         {
             if (result.Success)
             {
                 Debug.Log("<color=yellow> Submit Player Data Success </color>");
             }
-        }, null, null, false, CPEModel.Api.AppID));
+        }, null, null, forceCreate, CPEModel.Api.AppID));
     }
 }

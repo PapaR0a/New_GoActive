@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,6 +30,9 @@ public class GAMapControl
 
     public Action<bool> onCancelWalk;
     public Action<bool> onSetNewGoal;
+
+    public DateTime dateStartedMapWalk;
+    public DateTime dateEndedMapWalk;
 
     public void ChooseGameType()
     {
@@ -116,6 +120,8 @@ public class GAMapControl
                 break;
         }
 
+        SubmitRecord("Map walk Type choosed");
+
         onChooseGameType?.Invoke();
     }
 
@@ -163,7 +169,7 @@ public class GAMapControl
         if (val)
         {
             onShowNextPopup?.Invoke();
-
+            SubmitRecord("Walk Cancelled");
             GAMapModel.Api.distanceRemaining = 0f;
             GAMapModel.Api.distanceTraveled = 0f;
 
@@ -198,6 +204,8 @@ public class GAMapControl
     {
         GAMapModel.Api.isAutoPilot = !GAMapModel.Api.isAutoPilot;
         OnlineMapsLocationService.instance.enabled = !GAMapModel.Api.isAutoPilot;
+
+        SubmitRecord($"Toggle Auto Pilot {GAMapModel.Api.isAutoPilot}");
     }
 
     public void MoveToTarget()
@@ -293,7 +301,11 @@ public class GAMapControl
     private void GoalAchieved()
     {
         if (GAMapModel.Api.hasGoal)
+        {
             OnlineMapsMarker3DManager.instance.Remove(GAMapModel.Api.currentGoalMarker, true);
+            dateEndedMapWalk = DateTime.Now;
+            SubmitRecord("Destination Achieved");
+        }
 
         if (OnlineMapsMarker3DManager.instance.items.Count > 1)
         {
@@ -301,6 +313,8 @@ public class GAMapControl
         }
         else
         {
+            dateEndedMapWalk = DateTime.Now;
+            SubmitRecord("Goal Achieved");
             ShowRewardsPopup();
 
             GAMapModel.Api.currentStepsCount = 0;
@@ -394,5 +408,39 @@ public class GAMapControl
 
         // Create a new polygon to draw a circle
         OnlineMapsDrawingElementManager.AddItem(new OnlineMapsDrawingPoly(points, Color.red, 2));
+    }
+
+    public void SubmitRecord(string activityName = "")
+    {
+        List<string> destinations = new List<string>(); 
+
+        for(int i = 1; i < OnlineMapsMarker3DManager.instance.items.Count; i++)
+        {
+            double lng1, lat1;
+            OnlineMapsMarker3DManager.instance.items[i].GetPosition(out lng1, out lat1);
+            destinations.Add($"long: {lng1} Lat: {lat1}");
+        }
+
+        string currentDestination;
+        double lng2, lat2;
+        GAMapModel.Api.currentGoalMarker.GetPosition(out lng2, out lat2);
+        currentDestination = $"long: {lng2} Lat: {lat2}";
+
+        GAMapWalkDTO mapData = new GAMapWalkDTO
+            (
+            activityName: activityName,
+            typeSelected: GAMapModel.Api.currentGoalType.ToString(),
+            dateTime: DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss"),
+            dateStartedWalking: dateStartedMapWalk.ToString("dddd, dd MMMM yyyy HH:mm:ss"),
+            dateEndedWalking: dateEndedMapWalk.ToString("dddd, dd MMMM yyyy HH:mm:ss"),
+            destinations: destinations,
+            currentDestination: currentDestination,
+            distanceRemaining: GAMapModel.Api.distanceRemaining,
+            distanceTraveled: GAMapModel.Api.distanceTraveled,
+            distanceTotalTraveled: GAMapModel.Api.totalDistanceTraveled,
+            stepsMade: GAMapModel.Api.currentStepsCount
+            );
+
+        GAMissionsControl.Api.SubmitRecordData((JObject)JToken.FromObject(mapData), GAConstants.SCHEMA_MAP_WALK);
     }
 }

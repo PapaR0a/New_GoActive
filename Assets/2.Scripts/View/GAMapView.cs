@@ -1,4 +1,5 @@
 using HutongGames.PlayMaker;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -128,6 +129,9 @@ public class GAMapView : MonoBehaviour
         m_popupAnimator.SetBool(GAConstants.TOGGLE_POPUP, false);
         m_statsAnimator.gameObject.SetActive(true);
         m_statsAnimator.SetBool(GAConstants.STATS_BOOL, true);
+
+        GAMapControl.Api.dateStartedMapWalk = DateTime.Now;
+        GAMapControl.Api.SubmitRecord("OnStartWalking");
     }
 
     private void OnUpdateStat()
@@ -175,6 +179,8 @@ public class GAMapView : MonoBehaviour
     {
         ToggleWalkButtons(!val);
 
+        GAMapControl.Api.SubmitRecord("OnCancelWalk");
+
         if (val)
         {
             m_distanceRemainingText.text = string.Format(GAConstants.DISTANCE_REMAINING, GAMapModel.Api.distanceRemaining.ToString("0.00"));
@@ -206,6 +212,8 @@ public class GAMapView : MonoBehaviour
 
     private void OnResetStats()
     {
+        GAMapControl.Api.SubmitRecord("New Marker Set");
+
         m_distanceRemainingText.text = string.Format(GAConstants.DISTANCE_REMAINING, GAMapModel.Api.distanceRemaining.ToString("0.00"));
         m_distanceTraveledText.text = string.Format(GAConstants.DISTANCE_TRAVELLED, GAMapModel.Api.distanceTraveled.ToString("0.00"));
     }

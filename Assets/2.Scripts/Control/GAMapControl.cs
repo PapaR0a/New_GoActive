@@ -295,12 +295,9 @@ public class GAMapControl
 
     private void GoalAchieved()
     {
-        SubmitRecord("Destination Achieved");
-
         if (GAMapModel.Api.hasGoal)
         {
             OnlineMapsMarker3DManager.instance.Remove(GAMapModel.Api.currentGoalMarker, true);
-            dateEndedMapWalk = DateTime.Now;
         }
 
         if (OnlineMapsMarker3DManager.instance.items.Count > 1)
@@ -310,6 +307,7 @@ public class GAMapControl
         else
         {
             dateEndedMapWalk = DateTime.Now;
+            SubmitRecord("Destination Achieved");
             ShowRewardsPopup();
 
             GAMapModel.Api.currentStepsCount = 0;

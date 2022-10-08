@@ -74,7 +74,7 @@ public class CPELoginControl
     }
     #endregion
 
-    public void Login(string username, string password)
+    public void Login(string username, string password, Action callback = null)
     {
         CoroutineHelper.Call(CPEAPIService.Api.LoginMobileAsync(username, password, BWConstant.FIREBASE_FAKE_KEY, (result) =>
         {
@@ -121,15 +121,17 @@ public class CPELoginControl
                         }
                         else
                         {
+                            callback?.Invoke();
                             Debug.LogWarning("Error getting playground... Login again?");
                         }
                     }, 5));
                 }
                 else
                 {
-                    // TODO: Please show error, can use MainError as errorkey
-                    // Example: INVALID_CREDENTIALS -> Wrong username password
-                    Debug.Log("Error logging in with username password. MainError: " + result.MainError);
+                // TODO: Please show error, can use MainError as errorkey
+                // Example: INVALID_CREDENTIALS -> Wrong username password
+                callback?.Invoke();
+                Debug.Log("Error logging in with username password. MainError: " + result.MainError);
                 }
         }));
     }

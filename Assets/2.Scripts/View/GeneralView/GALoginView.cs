@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GALoginView : MonoBehaviour
 {
+    public GameObject loginError;
+
     private InputField m_Email = null;
     private InputField m_Password = null;
     private Button m_BtnLogin = null;
@@ -21,7 +23,12 @@ public class GALoginView : MonoBehaviour
 
     private void OnLogin()
     {
-        CPELoginControl.Api.Login(m_Email.text, m_Password.text);
+        CPELoginControl.Api.Login(m_Email.text, m_Password.text, ToggleError);
+    }
+
+    public void ToggleError()
+    {
+        loginError.SetActive(!loginError.activeSelf);
     }
 
 #if UNITY_EDITOR

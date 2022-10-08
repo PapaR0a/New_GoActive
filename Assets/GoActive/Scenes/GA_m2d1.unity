@@ -38255,12 +38255,16 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.StringReplace
+        - HutongGames.PlayMaker.Actions.ArrayAdd
+        - HutongGames.PlayMaker.Actions.ArrayAdd
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 788f1c03
+        - 
+        - 
+        actionEnabled: 000101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000500000007000000
+        actionHashCodes: 788f1c03978a9b03978a9b03
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -38296,8 +38300,82 @@ MonoBehaviour:
           networkSync: 0
           value: 
         fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
+        fsmVarParams:
+        - variableName: 
+          objectType: UnityEngine.Object
+          useVariable: 0
+          type: 4
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: Video
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: 
+          objectType: UnityEngine.Object
+          useVariable: 0
+          type: 2
+          floatValue: 0
+          intValue: 0
+          boolValue: 1
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: m2d1_key
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: 4
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        - useVariable: 1
+          name: m2d1_value
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: 2
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
@@ -38313,15 +38391,19 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1200000012000000120000001200000001000000
+        paramDataType: 120000001200000012000000120000000100000029000000270000002900000027000000
         paramName:
         - stringVariable
         - replace
         - with
         - storeResult
         - everyFrame
-        paramDataPos: 0000000001000000020000000300000000000000
-        paramByteDataSize: 0000000000000000000000000000000001000000
+        - array
+        - value
+        - array
+        - value
+        paramDataPos: 000000000100000002000000030000000000000000000000000000000100000001000000
+        paramByteDataSize: 000000000000000000000000000000000100000000000000000000000000000000000000
     - name: set text 2
       description: 
       colorIndex: 0
@@ -38340,7 +38422,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.UiTextSetText
         customNames:
         - 
-        actionEnabled: 01
+        actionEnabled: 00
         actionIsOpen: 01
         actionStartIndex: 00000000
         actionHashCodes: 09fbab04

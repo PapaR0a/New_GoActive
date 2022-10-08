@@ -119,9 +119,6 @@ public class GAMapControl
                 GAMapModel.Api.menuState = GAMapModel.MapState.SetSteps;
                 break;
         }
-
-        SubmitRecord("Map walk Type choosed");
-
         onChooseGameType?.Invoke();
     }
 
@@ -204,8 +201,6 @@ public class GAMapControl
     {
         GAMapModel.Api.isAutoPilot = !GAMapModel.Api.isAutoPilot;
         OnlineMapsLocationService.instance.enabled = !GAMapModel.Api.isAutoPilot;
-
-        SubmitRecord($"Toggle Auto Pilot {GAMapModel.Api.isAutoPilot}");
     }
 
     public void MoveToTarget()
@@ -300,11 +295,12 @@ public class GAMapControl
 
     private void GoalAchieved()
     {
+        SubmitRecord("Destination Achieved");
+
         if (GAMapModel.Api.hasGoal)
         {
             OnlineMapsMarker3DManager.instance.Remove(GAMapModel.Api.currentGoalMarker, true);
             dateEndedMapWalk = DateTime.Now;
-            SubmitRecord("Destination Achieved");
         }
 
         if (OnlineMapsMarker3DManager.instance.items.Count > 1)
@@ -314,7 +310,6 @@ public class GAMapControl
         else
         {
             dateEndedMapWalk = DateTime.Now;
-            SubmitRecord("Goal Achieved");
             ShowRewardsPopup();
 
             GAMapModel.Api.currentStepsCount = 0;

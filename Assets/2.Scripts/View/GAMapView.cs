@@ -179,8 +179,6 @@ public class GAMapView : MonoBehaviour
     {
         ToggleWalkButtons(!val);
 
-        GAMapControl.Api.SubmitRecord("OnCancelWalk");
-
         if (val)
         {
             m_distanceRemainingText.text = string.Format(GAConstants.DISTANCE_REMAINING, GAMapModel.Api.distanceRemaining.ToString("0.00"));

@@ -40,4 +40,11 @@ public class GAPainRecordItemView : MonoBehaviour
 
         return ItemsData;
     }
+
+    public void SubmitDiaryData()
+    {
+        GAMissionsControl.Api.onUpdatePainRecords?.Invoke();
+
+        GAMissionsControl.Api.SubmitPainDiary();
+    }
 }

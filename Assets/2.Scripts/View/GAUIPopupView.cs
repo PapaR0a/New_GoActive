@@ -8,11 +8,13 @@ public class GAUIPopupView : MonoBehaviour
     private void Start()
     {
         GAMissionsControl.Api.onUpdatePlayerData += UpdateDiaryCache;
+        GAMissionsControl.Api.onUpdatePainRecords += UpdateDiaryCache;
     }
 
     private void OnDestroy()
     {
         GAMissionsControl.Api.onUpdatePlayerData -= UpdateDiaryCache;
+        GAMissionsControl.Api.onUpdatePainRecords -= UpdateDiaryCache;
     }
 
     private void UpdateDiaryCache()

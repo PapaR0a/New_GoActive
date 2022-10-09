@@ -93,6 +93,8 @@ public class CPELoginControl
                             CPEModel.Api.AppID = pgResult.Data.Game.AppId;
                             CPEModel.Api.GameUserID = pgResult.Data.GameUser.ID;
 
+                            #region Player Data
+
                             CoroutineHelper.Call(CPEAPIService.Api.GetAppData((rs) =>
                             {
                                 if (rs.Success)
@@ -116,6 +118,44 @@ public class CPELoginControl
                                     }
                                 }
                             }, CPEServiceKey.PARAM_SCHEMA_APP_DATA));
+
+                            #endregion
+
+                            #region Pain Diaries
+
+                            CoroutineHelper.Call(CPEAPIService.Api.GetAppData((rs) =>
+                            {
+                                if (rs.Success)
+                                {
+                                    if (rs.Data != null && rs.Data.Count > 0)
+                                    {
+                                        JObject data = (JObject)rs.Data[0].Data;
+                                        var oldData = GAMissionsModel.Api.GetMissionStatuses();
+
+                                        foreach (var key in oldData.Keys)
+                                        {
+                                            List<MissionData> missionDataList = new List<MissionData>();
+                                            string missionDataJson = data[key].ToString();
+                                            JArray ja = JsonConvert.DeserializeObject<JArray>(missionDataJson);
+
+                                            for (int i = 0; i < ja.Count; i++)
+                                            {
+                                                var missionData = new MissionData();
+
+                                                JObject joData = (JObject)ja[i];
+                                                missionData.key = joData.Value<string>("key");
+                                                missionData.value = joData.Value<int>("value");
+
+                                                missionDataList.Add(missionData);
+                                            }
+                                        }
+                                    }
+                                }
+                            }, GAConstants.SCHEMA_PAIN_DIARY));
+
+                            #endregion
+
+                            #region Missions Status
 
                             CoroutineHelper.Call(CPEAPIService.Api.GetAppData((rs) =>
                             {
@@ -151,18 +191,31 @@ public class CPELoginControl
                                     }
                                 }
 
-                                Debug.Log($"<color=yellow> Updated status data: {JsonConvert.SerializeObject(GAMissionsModel.Api.GetMissionStatuses())} </color>");
+                                var currentStatuses = GAMissionsModel.Api.GetMissionStatuses();
 
-                                //foreach(var key in GAMissionsModel.Api.missionsStatuses.Keys)
-                                //{
-                                //    string[] keys = FsmVariables.GlobalVariables.setfm($"{gameObject.name.Replace("_save", "_key")}").stringValues;
-                                //    bool[] values = FsmVariables.GlobalVariables.GetFsmArray($"{gameObject.name.Replace("_save", "_value")}").boolValues;
-                                //}
+                                foreach (var stat in currentStatuses)
+                                {
+                                    List<string> keyData = new List<string>();
+                                    List<int> valueData = new List<int>();
+
+                                    foreach(var data in stat.Value)
+                                    {
+                                        keyData.Add(data.key);
+                                        valueData.Add(data.value);
+
+                                        FsmVariables.GlobalVariables.FindFsmArray(stat.Key.Replace("_save", "_key")).stringValues = keyData.ToArray();
+                                        FsmVariables.GlobalVariables.FindFsmArray(stat.Key.Replace("_save", "_value")).intValues = valueData.ToArray();
+                                    }
+                                }
+
+                                Debug.Log($"<color=yellow> Updated status data: {JsonConvert.SerializeObject(GAMissionsModel.Api.GetMissionStatuses())} </color>");
 
                                 StartSession(null);
 
                                 InitializeGA();
                             }, GAConstants.SCHEMA_MISSION_STATUS));
+
+                            #endregion
                         }
                         else
                         {

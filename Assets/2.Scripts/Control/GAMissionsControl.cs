@@ -20,6 +20,7 @@ public class GAMissionsControl
     public Action onUnlockNewMission;
     public Action<int> onChangeMap;
     public Action onUpdatePlayerData;
+    public Action onUpdatePainRecords;
     public Action<bool> onToggleMainCamera;
 
     public void RefreshMissions()
@@ -126,9 +127,8 @@ public class GAMissionsControl
 
     public void SubmitPainDiary()
     {
-        CPELoginControl.Api.SubmitAppData((JObject)JToken.FromObject(GAMissionsModel.Api.cachedDiaryRecords), GAConstants.SCHEMA_PAIN_DIARY);
-
-        Debug.Log($"<color=yellow> Mission Status: {JsonConvert.SerializeObject(GAMissionsModel.Api.missionsStatuses)} </color>");
+        CPELoginControl.Api.SubmitAppData(JToken.FromObject(GAMissionsModel.Api.cachedDiaryRecords), GAConstants.SCHEMA_PAIN_DIARY);
+        Debug.Log($"<color=yellow> Pain Diary Records: {JsonConvert.SerializeObject(GAMissionsModel.Api.cachedDiaryRecords)} </color>");
     }
 
     // Unique per sending

@@ -38,7 +38,7 @@ public class GAExitMissionView : MonoBehaviour
         SubmitData("Exit Mission");
 
         string[] keys = FsmVariables.GlobalVariables.GetFsmArray($"{gameObject.name.Replace("_save", "_key")}").stringValues;
-        bool[] values = FsmVariables.GlobalVariables.GetFsmArray($"{gameObject.name.Replace("_save", "_value")}").boolValues;
+        int[] values = FsmVariables.GlobalVariables.GetFsmArray($"{gameObject.name.Replace("_save", "_value")}").intValues;
 
         GAMissionsControl.Api.SubmitMissionsStatusData(gameObject.name, keys, values);
 

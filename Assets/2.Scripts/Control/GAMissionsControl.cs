@@ -70,7 +70,7 @@ public class GAMissionsControl
         Debug.Log($"<color=yellow> PlayerData: {JsonConvert.SerializeObject(playerData)} </color>");
     }
 
-    public void SubmitMissionsStatusData(string key, string[] keys, bool[] values)
+    public void SubmitMissionsStatusData(string key, string[] keys, int[] values)
     {
         var statuses = GAMissionsModel.Api.GetMissionStatuses()[key];
         for (int i = 0; i < keys.Length; i++)

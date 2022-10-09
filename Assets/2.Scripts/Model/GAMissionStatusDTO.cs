@@ -23,5 +23,5 @@ public class GAMissionStatusDTO
 public class MissionData 
 {
     public string key;
-    public bool value;
+    public int value;
 }

@@ -140,7 +140,7 @@ public class CPELoginControl
 
                                                 JObject joData = (JObject)ja[i];
                                                 missionData.key = joData.Value<string>("key");
-                                                missionData.value = joData.Value<bool>("value");
+                                                missionData.value = joData.Value<int>("value");
 
                                                 missionDataList.Add(missionData);
                                             }

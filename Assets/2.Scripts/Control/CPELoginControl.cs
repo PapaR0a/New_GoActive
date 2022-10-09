@@ -4,6 +4,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TaggleTemplate.Comm;
 using TaggleTemplate.Comm.TaggleExtensions;
 using TaggleTemplate.Core;
@@ -87,9 +88,15 @@ public class CPELoginControl
                     {
                         if (pgResult.Success)
                         {
-                            CPEModel.Api.GameID = pgResult.Data.Game.ID;
-                            CPEModel.Api.AppID = pgResult.Data.Game.AppId;
-                            CPEModel.Api.GameUserID = pgResult.Data.GameUser.ID;
+                            JObject joRaw = JsonConvert.DeserializeObject<JObject>(pgResult.RawData);
+                            JObject joApp = joRaw.Value<JObject>("taggle_app");
+
+                            CPEModel.Api.GameID = joApp.Value<long>("id");
+                            CPEModel.Api.AppID = joApp.Value<string>("app_id");
+
+                            JObject joUser = joRaw.Value<JObject>("game_user");
+
+                            CPEModel.Api.GameUserID = joUser.Value<long>("id"); ;
 
                             #region Player Data
 
@@ -134,26 +141,46 @@ public class CPELoginControl
                                 {
                                     if (rs.Data != null && rs.Data.Count > 0)
                                     {
-                                        JObject data = (JObject)rs.Data[0].Data;
-                                        var oldData = GAMissionsModel.Api.GetMissionStatuses();
+                                        JArray diaries = (JArray)rs.Data[0].Data;
 
-                                        foreach (var key in oldData.Keys)
+                                        List<List<GAPainRecordDTO>> serverDiaries = new List<List<GAPainRecordDTO>>();
+
+                                        foreach (var diary in diaries)
                                         {
-                                            List<MissionData> missionDataList = new List<MissionData>();
-                                            string missionDataJson = data[key].ToString();
-                                            JArray ja = JsonConvert.DeserializeObject<JArray>(missionDataJson);
+                                            List<GAPainRecordDTO> serverDiary = new List<GAPainRecordDTO>();
 
-                                            for (int i = 0; i < ja.Count; i++)
+                                            foreach (var entry in diary)
                                             {
-                                                var missionData = new MissionData();
+                                                GAPainRecordDTO diaryItem = new GAPainRecordDTO();
 
-                                                JObject joData = (JObject)ja[i];
-                                                missionData.key = joData.Value<string>("key");
-                                                missionData.value = joData.Value<int>("value");
+                                                diaryItem.other = entry.Value<string>("other");
+                                                diaryItem.duration = entry.Value<string>("duration");
+                                                diaryItem.thoughts = entry.Value<string>("thoughts");
+                                                diaryItem.recordTitle = entry.Value<string>("recordTitle");
+                                                diaryItem.otherActivity = entry.Value<string>("otherActivity");
+                                                diaryItem.activityThoughts = entry.Value<string>("activityThoughts");
 
-                                                missionDataList.Add(missionData);
+                                                diaryItem.typeOfPain = entry.Value<int>("typeOfPain");
+                                                diaryItem.painEndedType = entry.Value<int>("painEndedType");
+
+                                                diaryItem.painValue = entry.Value<float>("painValue");
+                                                diaryItem.matterValue = entry.Value<float>("matterValue");
+                                                
+                                                //diaryItem.options = entry.Value<bool[]>("options")?.ToList() ?? null;
+                                                //diaryItem.activities = entry.Value<bool[]>("activities")?.ToList() ?? null;
+
+                                                diaryItem.painStarted = entry.Value<DateTime?>("painStarted") ?? null;
+                                                diaryItem.painEnded = entry.Value<DateTime?>("painEnded") ?? null;
+
+                                                serverDiary.Add(diaryItem);
                                             }
+
+                                            serverDiaries.Add(serverDiary);
+
+                                            GAMissionsModel.Api.cachedDiaryRecords = serverDiaries;
                                         }
+
+                                        Debug.Log($"<color=yellow> Server Pain Records: {JsonConvert.SerializeObject(serverDiaries)} </color>");
                                     }
                                 }
                             }, GAConstants.SCHEMA_PAIN_DIARY));

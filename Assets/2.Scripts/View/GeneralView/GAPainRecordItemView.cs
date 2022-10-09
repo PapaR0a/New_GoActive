@@ -10,15 +10,10 @@ public class GAPainRecordItemView : MonoBehaviour
     [SerializeField] private GameObject recordThumbnail = null;
     [SerializeField] private List<GAPainRecordTogglesItemView> diaryItems = new List<GAPainRecordTogglesItemView>();
 
-    private void Start()
-    {
-        // Get data from server
-        //GetDiaryData();
-    }
-
     public void SetThumbnailParent(Transform parent)
     {
         recordThumbnail.transform.parent = parent;
+        recordThumbnail.gameObject.SetActive(true);
     }
 
     public void GenerateDiaryItems(List<GAPainRecordDTO> records)

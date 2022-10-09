@@ -43,7 +43,7 @@ public class GAPainRecordTogglesItemView : MonoBehaviour
             PainValue.value = cloudData.painValue;
         }
 
-        if (Options.Count > 0 && cloudData.options.Count > 0)
+        if (Options != null && Options.Count > 0 && cloudData.options != null && cloudData.options.Count > 0)
         {
             for (int i = 0; i < cloudData.options.Count; i++)
             {
@@ -127,7 +127,7 @@ public class GAPainRecordTogglesItemView : MonoBehaviour
             MatterValue.value = cloudData.matterValue;
         }
 
-        if (Activities.Count > 0 && cloudData.activities.Count > 0)
+        if (Activities != null && Activities.Count > 0 && cloudData.activities != null && cloudData.activities.Count > 0)
         {
             for (int i = 0; i < cloudData.activities.Count; i++)
             {

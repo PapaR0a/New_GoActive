@@ -64,7 +64,7 @@ MonoBehaviour:
       tooltip: 
       showInInspector: 0
       networkSync: 0
-      type: 2
+      type: 1
       objectTypeName: UnityEngine.Object
       floatValues: []
       intValues: 
@@ -99,19 +99,6 @@ MonoBehaviour:
       vector4Values: []
       objectReferences: []
     - useVariable: 1
-      name: m1d2_value
-      tooltip: 
-      showInInspector: 0
-      networkSync: 0
-      type: 2
-      objectTypeName: UnityEngine.Object
-      floatValues: []
-      intValues: 
-      boolValues: 
-      stringValues: []
-      vector4Values: []
-      objectReferences: []
-    - useVariable: 1
       name: m1d3_key
       tooltip: 
       showInInspector: 0
@@ -129,7 +116,7 @@ MonoBehaviour:
       tooltip: 
       showInInspector: 0
       networkSync: 0
-      type: 2
+      type: 1
       objectTypeName: UnityEngine.Object
       floatValues: []
       intValues: 
@@ -142,7 +129,7 @@ MonoBehaviour:
       tooltip: 
       showInInspector: 0
       networkSync: 0
-      type: 2
+      type: 1
       objectTypeName: UnityEngine.Object
       floatValues: []
       intValues: 
@@ -181,7 +168,7 @@ MonoBehaviour:
       tooltip: 
       showInInspector: 0
       networkSync: 0
-      type: 2
+      type: 1
       objectTypeName: UnityEngine.Object
       floatValues: []
       intValues: 
@@ -194,7 +181,7 @@ MonoBehaviour:
       tooltip: 
       showInInspector: 0
       networkSync: 0
-      type: 2
+      type: 1
       objectTypeName: UnityEngine.Object
       floatValues: []
       intValues: 
@@ -233,7 +220,7 @@ MonoBehaviour:
       tooltip: 
       showInInspector: 0
       networkSync: 0
-      type: 2
+      type: 1
       objectTypeName: UnityEngine.Object
       floatValues: []
       intValues: 
@@ -307,24 +294,11 @@ MonoBehaviour:
       vector4Values: []
       objectReferences: []
     - useVariable: 1
-      name: m2d2_value
-      tooltip: 
-      showInInspector: 0
-      networkSync: 0
-      type: 2
-      objectTypeName: UnityEngine.Object
-      floatValues: []
-      intValues: 
-      boolValues: 
-      stringValues: []
-      vector4Values: []
-      objectReferences: []
-    - useVariable: 1
       name: m2d3_value
       tooltip: 
       showInInspector: 0
       networkSync: 0
-      type: 2
+      type: 1
       objectTypeName: UnityEngine.Object
       floatValues: []
       intValues: 
@@ -337,7 +311,7 @@ MonoBehaviour:
       tooltip: 
       showInInspector: 0
       networkSync: 0
-      type: 2
+      type: 1
       objectTypeName: UnityEngine.Object
       floatValues: []
       intValues: 
@@ -350,7 +324,7 @@ MonoBehaviour:
       tooltip: 
       showInInspector: 0
       networkSync: 0
-      type: 2
+      type: 1
       objectTypeName: UnityEngine.Object
       floatValues: []
       intValues: 
@@ -363,7 +337,33 @@ MonoBehaviour:
       tooltip: 
       showInInspector: 0
       networkSync: 0
-      type: 2
+      type: 1
+      objectTypeName: UnityEngine.Object
+      floatValues: []
+      intValues: 
+      boolValues: 
+      stringValues: []
+      vector4Values: []
+      objectReferences: []
+    - useVariable: 1
+      name: m1d2_value
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      type: 1
+      objectTypeName: UnityEngine.Object
+      floatValues: []
+      intValues: 
+      boolValues: 
+      stringValues: []
+      vector4Values: []
+      objectReferences: []
+    - useVariable: 1
+      name: m2d2_value
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      type: 1
       objectTypeName: UnityEngine.Object
       floatValues: []
       intValues: 
@@ -374,6 +374,6 @@ MonoBehaviour:
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   events:
   - question 2

@@ -54458,7 +54458,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.StringReplace
         customNames:
         - 
-        actionEnabled: 01
+        actionEnabled: 00
         actionIsOpen: 01
         actionStartIndex: 00000000
         actionHashCodes: 788f1c03
@@ -54602,10 +54602,10 @@ MonoBehaviour:
         - variableName: 
           objectType: UnityEngine.Object
           useVariable: 0
-          type: 2
+          type: 1
           floatValue: 0
-          intValue: 0
-          boolValue: 1
+          intValue: 1
+          boolValue: 0
           stringValue: 
           vector4Value: {x: 0, y: 0, z: 0, w: 0}
           objectReference: {fileID: 0}
@@ -54642,7 +54642,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          type: 2
+          type: 1
           objectTypeName: UnityEngine.Object
           floatValues: []
           intValues: 

@@ -52,7 +52,6 @@ public class GAPainDiaryView : MonoBehaviour
             var painRecordView = Instantiate(m_diaryItemPref, m_optionParent).GetComponent<GAPainRecordItemView>();
             painRecordView.GenerateDiaryItems(record);
             painRecordView.SetThumbnailParent(m_thumbnailParent);
-            painRecordView.gameObject.SetActive(false);
         }
 
         yield return waitForFrame;

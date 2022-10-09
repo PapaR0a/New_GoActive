@@ -13,7 +13,6 @@ public class GAPainRecordItemView : MonoBehaviour
     public void SetThumbnailParent(Transform parent)
     {
         recordThumbnail.transform.parent = parent;
-        recordThumbnail.gameObject.SetActive(true);
     }
 
     public void GenerateDiaryItems(List<GAPainRecordDTO> records)

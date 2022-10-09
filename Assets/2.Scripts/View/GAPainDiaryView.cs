@@ -21,6 +21,17 @@ public class GAPainDiaryView : MonoBehaviour
         {
             GAMissionsControl.Api.SubmitUserData();
         }
+
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            GAMissionsControl.Api.SubmitPainDiary();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            GAMissionsControl.Api.onUpdatePainRecords?.Invoke();
+            CreateDiaryItems(GAMissionsModel.Api.cachedDiaryRecords);
+        }
 #endif
     }
 

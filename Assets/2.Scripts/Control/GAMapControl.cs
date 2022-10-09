@@ -298,6 +298,7 @@ public class GAMapControl
         if (GAMapModel.Api.hasGoal)
         {
             OnlineMapsMarker3DManager.instance.Remove(GAMapModel.Api.currentGoalMarker, true);
+            GAMapControl.Api.dateStartedMapWalk = DateTime.Now;
         }
 
         if (OnlineMapsMarker3DManager.instance.items.Count > 1)

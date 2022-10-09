@@ -109,9 +109,24 @@ public class GAMissionsControl
             }
         }
 
+        for (int i = 0; i < statuses.Count; i++)
+        {
+            if (string.IsNullOrEmpty( statuses[i].key) )
+            {
+                statuses.RemoveAt(i);
+            }
+        }
+
         GAMissionsModel.Api.UpdateMissionStatuses(key, statuses);
 
         CPELoginControl.Api.SubmitAppData((JObject)JToken.FromObject(GAMissionsModel.Api.missionsStatuses), GAConstants.SCHEMA_MISSION_STATUS);
+
+        Debug.Log($"<color=yellow> Mission Status: {JsonConvert.SerializeObject(GAMissionsModel.Api.missionsStatuses)} </color>");
+    }
+
+    public void SubmitPainDiary()
+    {
+        CPELoginControl.Api.SubmitAppData((JObject)JToken.FromObject(GAMissionsModel.Api.cachedDiaryRecords), GAConstants.SCHEMA_PAIN_DIARY);
 
         Debug.Log($"<color=yellow> Mission Status: {JsonConvert.SerializeObject(GAMissionsModel.Api.missionsStatuses)} </color>");
     }

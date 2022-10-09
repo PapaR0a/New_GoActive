@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -63,5 +65,19 @@ public class GAMissionsView : MonoBehaviour
     {
         m_mapName.sprite = m_mapNamesList[val];
         m_mapInfo.text = m_mapInfoList[val];
+    }
+
+    public void Update()
+    {
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            GAMissionsModel.Api.missionsStatuses = null;
+
+            CPELoginControl.Api.SubmitAppData((JObject)JToken.FromObject(GAMissionsModel.Api.GetMissionStatuses()), GAConstants.SCHEMA_MISSION_STATUS);
+
+            Debug.Log($"<color=red> DEBUG: SEND DEFAULT Mission Status: {JsonConvert.SerializeObject(GAMissionsModel.Api.missionsStatuses)} </color>");
+        }
+#endif
     }
 }

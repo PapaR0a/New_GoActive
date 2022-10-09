@@ -26,6 +26,7 @@ public class GAConstants
     public const string HIDE = "Hide";
     public const string MISSION = "Mission";
 
+    public const string SCHEMA_PAIN_DIARY = "ga_pain_diary";
     public const string SCHEMA_MAP_WALK = "ga_map_walk";
     public const string SCHEMA_MISSION_DATA = "ga_mission_data";
     public const string SCHEMA_MISSION_STATUS = "ga_mission_status";

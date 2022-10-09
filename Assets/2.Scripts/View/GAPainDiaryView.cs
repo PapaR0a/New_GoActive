@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,8 +26,10 @@ public class GAPainDiaryView : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F3))
         {
-            GAMissionsControl.Api.SubmitPainDiary();
-        }
+            CPELoginControl.Api.SubmitAppData(JToken.FromObject(new List<List<GAPainRecordDTO>>()), GAConstants.SCHEMA_PAIN_DIARY);
+
+            Debug.Log($"<color=red> DEBUG: RESET DIARIES </color>");
+        }        
 
         if (Input.GetKeyDown(KeyCode.F4))
         {

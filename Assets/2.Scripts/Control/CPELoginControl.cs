@@ -165,12 +165,30 @@ public class CPELoginControl
 
                                                 diaryItem.painValue = entry.Value<float>("painValue");
                                                 diaryItem.matterValue = entry.Value<float>("matterValue");
-                                                
-                                                //diaryItem.options = entry.Value<bool[]>("options")?.ToList() ?? null;
-                                                //diaryItem.activities = entry.Value<bool[]>("activities")?.ToList() ?? null;
 
                                                 diaryItem.painStarted = entry.Value<DateTime?>("painStarted") ?? null;
                                                 diaryItem.painEnded = entry.Value<DateTime?>("painEnded") ?? null;
+
+                                                JArray jaOptions = entry.Value<JArray>("options");
+
+                                                if (jaOptions != null && jaOptions.Count > 0)
+                                                {
+                                                    diaryItem.options = new List<bool>();
+                                                    foreach (var choice in jaOptions)
+                                                    {
+                                                        diaryItem.options.Add(choice.ToObject<bool>());
+                                                    }
+                                                }
+
+                                                JArray jaActivities = entry.Value<JArray>("activities");
+                                                if (jaActivities != null && jaActivities.Count > 0)
+                                                {
+                                                    diaryItem.options = new List<bool>();
+                                                    foreach (var activity in jaActivities)
+                                                    {
+                                                        diaryItem.options.Add(activity.ToObject<bool>());
+                                                    }
+                                                }
 
                                                 serverDiary.Add(diaryItem);
                                             }

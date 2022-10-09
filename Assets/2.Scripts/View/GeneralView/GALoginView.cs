@@ -34,9 +34,14 @@ public class GALoginView : MonoBehaviour
 #if UNITY_EDITOR
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.F5))
         {
             CPELoginControl.Api.Login("tester", "Aa123123!@#456");
+        }
+
+        if (Input.GetKeyDown(KeyCode.F6))
+        {
+            CPELoginControl.Api.Login("goactive15", "Aa123123!@#G15");
         }
     }
 

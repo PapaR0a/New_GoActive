@@ -70,7 +70,7 @@ public class GAMissionsView : MonoBehaviour
     public void Update()
     {
 #if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.F1))
         {
             GAMissionsModel.Api.missionsStatuses = null;
 

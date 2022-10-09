@@ -87,8 +87,6 @@ public class CPELoginControl
                     {
                         if (pgResult.Success)
                         {
-                            Debug.Log($"<color=yellow>LOGIN SUCCESS: {JsonConvert.SerializeObject(pgResult.Data)} </color>");
-
                             CPEModel.Api.GameID = pgResult.Data.Game.ID;
                             CPEModel.Api.AppID = pgResult.Data.Game.AppId;
                             CPEModel.Api.GameUserID = pgResult.Data.GameUser.ID;
@@ -102,19 +100,26 @@ public class CPELoginControl
                                     if (rs.Data != null && rs.Data.Count > 0)
                                     {
                                         JObject data = (JObject)rs.Data[0].Data;
-                                        //JObject data = ja.Value<JObject>(CPEServiceKey.PARAM_SCHEMA_APP_DATA);
 
-                                        GAMissionsModel.Api.stepsMade = data.Value<int>("stepsMade");
-                                        GAMissionsModel.Api.lifePoints = data.Value<int>("lifePoints");
-                                        GAMissionsModel.Api.patientStory = data.Value<string>("patientStory");
-                                        GAMissionsModel.Api.distanceTraveled = data.Value<float>("distanceTraveled");
-                                        GAMissionsModel.Api.missionUnlocking = data.Value<int>("missionUnlocking");
-                                        GAMissionsModel.Api.stepsMade = data.Value<int>("stepsMade");
-                                        GAMissionsModel.Api.distanceRemaining = data.Value<float>("distanceRemaining");
-                                        GAMissionsModel.Api.minimumStepsRequired = data.Value<int>("minimumStepsRequired");
-                                        GAMissionsModel.Api.distanceTotalTraveled = data.Value<float>("distanceTotalTraveled");
-                                        GAMissionsModel.Api.unlockedMissionsCount = data.Value<int>("unlockedMissionsCount");
-                                        GAMissionsModel.Api.minimumDistanceToTravel = data.Value<int>("minimumDistanceRequired");
+                                        Debug.Log($"<color=yellow>LOGIN SUCCESS: {JsonConvert.SerializeObject(data)} </color>");
+
+                                        var serverPlayerData = new GAPlayerDataDTO
+                                        (
+                                            lifePoints: data.Value<int>("lifePoints"),
+                                            unlockedMissionsCount: data.Value<int>("unlockedMissionsCount"),
+                                            painDiaryRecords: null,
+                                            missionUnlocking: data.Value<int>("missionUnlocking"),
+                                            minimumDistanceRequired: data.Value<int>("minimumDistanceRequired"),
+                                            minimumStepsRequired: data.Value<int>("minimumStepsRequired"),
+                                            settingsPassword: "goactive123",
+                                            distanceRemaining: data.Value<float>("distanceRemaining"),
+                                            distanceTraveled: data.Value<float>("distanceTraveled"),
+                                            distanceTotalTraveled: data.Value<float>("distanceTotalTraveled"),
+                                            stepsMade: data.Value<int>("stepsMade"),
+                                            patientStory: data.Value<string>("patientStory")
+                                        );
+
+                                        GAMissionsModel.Api.UpdatePlayerData(serverPlayerData);
                                     }
                                 }
                             }, CPEServiceKey.PARAM_SCHEMA_APP_DATA));
@@ -239,22 +244,6 @@ public class CPELoginControl
         SceneManager.UnloadSceneAsync($"GA_Title");
         //SceneManager.LoadSceneAsync($"GAGame", LoadSceneMode.Additive);
         SceneManager.LoadSceneAsync($"GA_Intro", LoadSceneMode.Additive);
-    }
-
-    public void GetAppData(Action<bool> onCallback)
-    {
-        CoroutineHelper.Call(CPEAPIService.Api.GetAppData((result) =>
-        {
-            if (result.Success)
-            {
-                if (result.Data != null && result.Data.Count > 0)
-                {
-                    //TODO:
-                    //
-                }
-            }
-            onCallback?.Invoke(result.Success && result.Data != null && result.Data.Count > 0);
-        }, CPEServiceKey.PARAM_SCHEMA_APP_DATA, CPEModel.Api.AppID));
     }
 
     public void SubmitAppData(JToken data, string schemaName = "", bool forceCreate = false)

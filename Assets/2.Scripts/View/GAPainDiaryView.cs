@@ -17,7 +17,7 @@ public class GAPainDiaryView : MonoBehaviour
     private void Update()
     {
 #if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.F2))
         {
             GAMissionsControl.Api.SubmitUserData();
         }

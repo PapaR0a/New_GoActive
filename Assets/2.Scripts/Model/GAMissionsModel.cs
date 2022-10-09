@@ -23,7 +23,7 @@ public class GAMissionsModel
 
     public List<List<GAPainRecordDTO>> cachedDiaryRecords = null;
 
-    private GAPlayerDataDTO playerData = null;
+    public GAPlayerDataDTO playerData = null;
 
     public int lifePoints = 0;
 
@@ -71,13 +71,26 @@ public class GAMissionsModel
 
     public void UpdatePlayerData(GAPlayerDataDTO data)
     {
+        playerData = new GAPlayerDataDTO();
 
+        playerData.lifePoints = data.lifePoints;
+        playerData.unlockedMissionsCount = data.unlockedMissionsCount;
+        playerData.painDiaryRecords = cachedDiaryRecords;
+        playerData.missionUnlocking = data.missionUnlocking;
+        playerData.minimumDistanceRequired = data.minimumDistanceRequired;
+        playerData.minimumStepsRequired = data.minimumStepsRequired;
+        playerData.settingsPassword = data.settingsPassword;
+        playerData.distanceRemaining = data.distanceRemaining;
+        playerData.distanceTraveled = data.distanceTraveled;
+        playerData.distanceTotalTraveled = data.distanceTotalTraveled;
+        playerData.stepsMade = data.stepsMade;
+        playerData.patientStory = data.patientStory;
+
+        UpdateModelData();
     }
 
-    public GAPlayerDataDTO GetCurrentPlayerData()
+    public void UpdatePlayerData()
     {
-        GAMissionsControl.Api.onUpdatePlayerData?.Invoke();
-
         playerData = new GAPlayerDataDTO
             (
                 lifePoints: FsmVariables.GlobalVariables.GetFsmInt("GA_Lifepoints").Value,
@@ -93,6 +106,46 @@ public class GAMissionsModel
                 stepsMade: stepsMade,
                 patientStory: patientStory
             );
+    }
+
+    public void UpdateModelData()
+    {
+        stepsMade = playerData.stepsMade;
+        lifePoints = playerData.lifePoints;
+        patientStory = playerData.patientStory;
+        distanceTraveled = playerData.distanceTraveled;
+        missionUnlocking = playerData.missionUnlocking;
+        stepsMade = playerData.stepsMade;
+        distanceRemaining = playerData.distanceRemaining;
+        minimumStepsRequired = playerData.minimumStepsRequired;
+        distanceTotalTraveled = playerData.distanceTotalTraveled;
+        unlockedMissionsCount = playerData.unlockedMissionsCount;
+        minimumDistanceToTravel = playerData.minimumDistanceRequired;
+    }
+
+    public GAPlayerDataDTO GetCurrentPlayerData()
+    {
+        GAMissionsControl.Api.onUpdatePlayerData?.Invoke();
+
+        if (playerData == null)
+        {
+            UpdatePlayerData();
+        }
+        else
+        {
+            playerData.lifePoints = FsmVariables.GlobalVariables.GetFsmInt("GA_Lifepoints").Value;
+            playerData.unlockedMissionsCount = unlockedMissionsCount;
+            playerData.painDiaryRecords = cachedDiaryRecords;
+            playerData.missionUnlocking = missionUnlocking;
+            playerData.minimumDistanceRequired = minimumDistanceToTravel;
+            playerData.minimumStepsRequired = minimumStepsRequired;
+            playerData.settingsPassword = settingPassword;
+            playerData.distanceRemaining = distanceRemaining;
+            playerData.distanceTraveled = distanceTraveled;
+            playerData.distanceTotalTraveled = distanceTotalTraveled;
+            playerData.stepsMade = stepsMade;
+            playerData.patientStory = patientStory;
+        }
 
         return playerData;
     }

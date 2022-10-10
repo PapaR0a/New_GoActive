@@ -135,7 +135,7 @@ public class GAMissionsModel
         {
             playerData.lifePoints = FsmVariables.GlobalVariables.GetFsmInt("GA_Lifepoints").Value;
             playerData.unlockedMissionsCount = unlockedMissionsCount;
-            playerData.painDiaryRecords = cachedDiaryRecords;
+            playerData.painDiaryRecords = null;
             playerData.missionUnlocking = missionUnlocking;
             playerData.minimumDistanceRequired = minimumDistanceToTravel;
             playerData.minimumStepsRequired = minimumStepsRequired;

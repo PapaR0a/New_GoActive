@@ -82,7 +82,7 @@ public class GAPainRecordTogglesItemView : MonoBehaviour
             }
         }
 
-        if (TypesOfPain.Count > 0)
+        if (TypesOfPain != null && TypesOfPain.Count > 0)
         {
             TypesOfPain[cloudData.typeOfPain].isOn = true;
         }

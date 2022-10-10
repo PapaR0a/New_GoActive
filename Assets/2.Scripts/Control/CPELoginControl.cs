@@ -183,10 +183,10 @@ public class CPELoginControl
                                                 JArray jaActivities = entry.Value<JArray>("activities");
                                                 if (jaActivities != null && jaActivities.Count > 0)
                                                 {
-                                                    diaryItem.options = new List<bool>();
+                                                    diaryItem.activities = new List<bool>();
                                                     foreach (var activity in jaActivities)
                                                     {
-                                                        diaryItem.options.Add(activity.ToObject<bool>());
+                                                        diaryItem.activities.Add(activity.ToObject<bool>());
                                                     }
                                                 }
 

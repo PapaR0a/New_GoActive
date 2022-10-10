@@ -73,6 +73,9 @@ public class GAMissionsControl
 
     public void SubmitMissionsStatusData(string key, string[] keys, int[] values)
     {
+        if (!GAMissionsModel.Api.GetMissionStatuses().ContainsKey(key))
+            return;
+
         var statuses = GAMissionsModel.Api.GetMissionStatuses()[key];
         for (int i = 0; i < keys.Length; i++)
         {

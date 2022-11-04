@@ -1,49 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Net.Mail;
 using Taggle.HealthApp.Others;
 using UnityEngine;
 
-public static class StringUtils {
-
+public static class StringUtils
+{
     public static bool IsValidEmail(this string email)
     {
         try
         {
-            var addr = new System.Net.Mail.MailAddress(email);
+            MailAddress addr = new MailAddress(email);
             return addr.Address == email;
         }
-        catch { return false; }
+        catch
+        {
+            return false;
+        }
     }
 
     public static string GetKValueUnit(this float value)
     {
         if (value > 1000000000)
+        {
             return "B";
+        }
         if (value > 1000000)
+        {
             return "M";
+        }
         if (value > 1000)
+        {
             return "K";
+        }
         return "";
     }
 
-    public static float GetKValueByUnit(this float value, string unit)
-    {
-        switch (unit.ToLower())
-        {
-            case "b":
-                return Mathf.RoundToInt((value / 1000000000)*10)/10f;
-            case "m":
-                return Mathf.RoundToInt((value / 1000000) * 10) / 10f;
-            case "k":
-                return Mathf.RoundToInt((value / 1000) * 10) / 10f;
-            default:
-                return value;
-        }
-    }
-
     /// <summary>
-	/// Returns the name translated of current month
-	/// </summary>
+    /// Returns the name translated of current month
+    /// </summary>
     public static string GetMonthName(int index)
     {
         switch (index)
@@ -75,5 +71,11 @@ public static class StringUtils {
             default:
                 return "";
         }
+    }
+
+
+    public static string ToTitleCase(string str)
+    {
+        return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str);
     }
 }

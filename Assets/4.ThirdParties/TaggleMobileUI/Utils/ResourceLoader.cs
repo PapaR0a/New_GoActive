@@ -67,10 +67,15 @@ public static class ResourceUtils
                       && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
         if (!result)
         {
-            rawImage.texture = Resources.Load<Texture>(link);
+            rawImage.texture = ResourceObject.GetResource<Texture>(link);
             return;
         }
         ResourceHelper.LoadTexture(rawImage, link, cache, false);
+    }
+
+    public static void DownloadTextureURL(string url, Action<Texture2D> callback)
+    {
+        ResourceHelper.DownloadTextureURL(url, callback);
     }
 }
 
@@ -140,6 +145,38 @@ public class ResourceHelper : MonoBehaviour
         Destroy(gameObject);//destroy game object when complete
     }
 
+    public static void DownloadTextureURL(string url, Action<Texture2D> callback)
+    {
+        GameObject go = new GameObject
+        {
+            name = "load_texture_url : " + url
+        };
+        DontDestroyOnLoad(go);
+        ResourceHelper view = go.AddComponent<ResourceHelper>();
+        view.DownloadTexture(url, callback);
+    }
+
+    private void DownloadTexture(string url, Action<Texture2D> callback)
+    {
+        StartCoroutine(LoadFromWeb(url, callback));
+    }
+
+    private IEnumerator LoadFromWeb(string url, Action<Texture2D> callback)
+    {
+        UnityWebRequest wr = new UnityWebRequest(url);
+        DownloadHandlerTexture texDl = new DownloadHandlerTexture(true);
+        wr.downloadHandler = texDl;
+        yield return wr.Send();
+        if (wr.isDone)
+        {
+            callback?.Invoke(texDl.texture);
+        }
+        else
+        {
+            callback?.Invoke(null);
+        }
+        Destroy(gameObject);
+    }
 }
 
 public class DownloadHelper : MonoBehaviour

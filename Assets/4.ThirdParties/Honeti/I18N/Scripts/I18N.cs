@@ -208,16 +208,20 @@ namespace Honeti
 
         #region PUBLIC METHODS
 
-        public void MergeMoreData(string text)
+        public void MergeMoreData(string text, bool replace = true)
         {
             Hashtable table = _parseLanguage(text);
             foreach (DictionaryEntry entry in table)
             {
                 if (!_langs.ContainsKey(entry.Key))
+                {
                     continue;
+                }
                 Hashtable keys = entry.Value as Hashtable;
-                if(keys == null)
+                if (keys == null)
+                {
                     continue;
+                }
                 Hashtable keysBase = _langs[entry.Key] as Hashtable;
                 if (keysBase == null)
                 {
@@ -226,10 +230,15 @@ namespace Honeti
                 }
                 foreach (DictionaryEntry key in keys)
                 {
-                    keysBase[key.Key] = key.Value;
+                    //Note: Nathan update to skip merge if replace==false
+                    if (replace || !keysBase.ContainsKey(key.Key))
+                    {
+                        keysBase[key.Key] = key.Value;
+                    }
                 }
             }
         }
+
 
         public bool HasKey(string key)
         {

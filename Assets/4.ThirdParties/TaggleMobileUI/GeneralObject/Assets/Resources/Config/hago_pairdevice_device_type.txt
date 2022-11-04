@@ -1,0 +1,52 @@
+[
+  {
+    "name": "ECO2",
+    "image": "",
+    "image_thumb": "",
+    "display_name": "ECO2",
+    "connect_type": "bluetooth_profile",
+    "vsm_stats": [""],
+    "service_uuid": null,
+    "characteristic_uuid": null
+  },
+  {
+    "name": "PO3",
+    "image": "",
+    "image_thumb": "",
+    "display_name": "iHealth PO3",
+    "connect_type": "ihealth_sdk",
+    "vsm_stats": ["oxygen_saturation", "heart_rate"],
+    "service_uuid": null,
+    "characteristic_uuid": null
+  },
+  {
+    "name": "KN-550BT",
+    "image": "",
+    "image_thumb": "",
+    "display_name": "iHealth KN550BT",
+    "connect_type": "ihealth_sdk",
+    "vsm_stats": ["heart_rate", "high_pressure", "low_pressure", "pulse_wave"],
+    "service_uuid": null,
+    "characteristic_uuid": null
+  },
+  {
+    "name": "POLAR_HR",
+    "image": "",
+    "image_thumb": "",
+    "display_name": "Polar Heart rate",
+    "connect_type": "bluetooth_profile",
+    "vsm_stats": ["heart_rate"],
+    "service_uuid": "xxxx-xxxx-xxxx-xxxx",
+    "characteristic_uuid": "xxxx-xxxx-xxxx-xxxx"
+  },
+  {
+    "name": "IMU",
+    "image": "",
+    "image_thumb": "",
+    "display_name": "IMU",
+    "connect_type": "custom",
+    "vsm_stats": [],
+    "service_uuid": null,
+    "characteristic_uuid": null
+  }
+]

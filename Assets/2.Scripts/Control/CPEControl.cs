@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Honeti;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using TaggleTemplate.Comm;
@@ -44,6 +45,9 @@ public class CPEControl
 		CPELoginControl.Api = new CPELoginControl();
         GAControl.Api.Init();
 
+        TextAsset goLanguage = Resources.Load<TextAsset>(HAGOConstant.PATH_LANGUAGE);
+        I18N.instance.MergeMoreData(goLanguage.text, false);
+
         SceneManager.LoadSceneAsync(CPEConstant.SCENE_LOGIN, LoadSceneMode.Additive);
 
 	}
@@ -60,5 +64,24 @@ public class CPEControl
     {
         ShowPopupEvent?.Invoke(iconType,content,isAutoTurnOff,callback);
     }
-		
+
+    public void ConnectHAGOBluetooth()
+    {
+        if (!HAGOPairDeviceModel.Api.IsDeviceTypeLoaded())
+        {
+            CoroutineHelper.Call(CPEAPIService.Api.GetBluetoothDeviceTypes(result =>
+            {
+                if (result.Success)
+                {
+                    HAGOPairDeviceManager.Api.Init(result.Data, null, null);
+                }
+            }));
+
+        }
+        else
+        {
+            HAGOPairDeviceManager.Api.Init(null, null);
+        }
+    }
+
 }

@@ -6,8 +6,8 @@ using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-public static class GeneralUtils {
-
+public static class GeneralUtils
+{
     public static T Get<T>(this Dictionary<string, object> h, string key, bool useDefaultIfNotExist = true)
     {
         return Get<T, object>(h, key, useDefaultIfNotExist);
@@ -26,11 +26,17 @@ public static class GeneralUtils {
         }
 
         object value = h[key];
-        if (value == null) return default(T);
+        if (value == null)
+        {
+            return default(T);
+        }
 
         Type valueT = value.GetType();
 
-        if (valueT == typeof(T)) return (T)value;
+        if (valueT == typeof(T))
+        {
+            return (T) value;
+        }
         if (valueT.CanCast(typeof(T)))
         {
             try
@@ -38,7 +44,7 @@ public static class GeneralUtils {
 #if UNITY_WP8
                 return (T)Convert.ChangeType(value, typeof(T));
 #else
-                return (T)Convert.ChangeType(value, Type.GetTypeCode(typeof(T)));
+                return (T) Convert.ChangeType(value, Type.GetTypeCode(typeof(T)));
 #endif
             }
             catch (Exception e)
@@ -57,18 +63,21 @@ public static class GeneralUtils {
 
     private static bool CanCast(this Type p_from, Type p_to)
     {
-        if (p_to.IsAssignableFrom(p_from)) { return true; }
+        if (p_to.IsAssignableFrom(p_from))
+        {
+            return true;
+        }
         return (p_from.IsPrimitive || p_from.IsEnum) && (p_to.IsPrimitive || p_to.IsEnum);
     }
-    
+
     public static Rect GetScreenRect(GameObject gameObject)
     {
         RectTransform transform = gameObject.GetComponent<RectTransform>();
 
         Vector2 size = Vector2.Scale(transform.rect.size, transform.lossyScale);
         Rect rect = new Rect(transform.position.x, Screen.height - transform.position.y, size.x, size.y);
-        rect.x -= (transform.pivot.x * size.x);
-        rect.y -= ((1.0f - transform.pivot.y) * size.y);
+        rect.x -= transform.pivot.x * size.x;
+        rect.y -= (1.0f - transform.pivot.y) * size.y;
 
         return rect;
     }
@@ -77,11 +86,17 @@ public static class GeneralUtils {
     {
         string baseStr = Duplicate("\t", p_level);
 
-        if (p_obj == null) { return "null"; }
+        if (p_obj == null)
+        {
+            return "null";
+        }
 
-        if (p_obj.GetType().IsPrimitive) { return p_obj.ToString(); }
+        if (p_obj.GetType().IsPrimitive)
+        {
+            return p_obj.ToString();
+        }
 
-        var list1 = p_obj as IList;
+        IList list1 = p_obj as IList;
         if (list1 != null)
         {
             IList list = list1;
@@ -93,7 +108,7 @@ public static class GeneralUtils {
             return str + "]";
         }
 
-        var dictionary = p_obj as IDictionary;
+        IDictionary dictionary = p_obj as IDictionary;
         if (dictionary != null)
         {
             IDictionary dict = dictionary;
@@ -102,8 +117,7 @@ public static class GeneralUtils {
 
             foreach (DictionaryEntry item in dict)
             {
-                str += (first ? "\n" : ",\n") + baseStr + "\t"
-                       + (item.Key + ":" + DeepTrace(item.Value, p_level + 1));
+                str += (first ? "\n" : ",\n") + baseStr + "\t" + item.Key + ":" + DeepTrace(item.Value, p_level + 1);
                 first = false;
             }
 
@@ -116,7 +130,10 @@ public static class GeneralUtils {
     public static string Duplicate(string p_str, int p_nTimes)
     {
         string result = "";
-        for (int i = 0; i < p_nTimes; i++) { result += p_str; }
+        for (int i = 0; i < p_nTimes; i++)
+        {
+            result += p_str;
+        }
         return result;
     }
 }
